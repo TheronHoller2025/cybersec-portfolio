@@ -216,7 +216,7 @@
 
 ## 7. CERTIFICATION PATH
 
-### Your Path
+### My Path
 Tech+ → A+ → Network+ → Security+ → eJPT → PNPT → OSCP
 
 ### Status
