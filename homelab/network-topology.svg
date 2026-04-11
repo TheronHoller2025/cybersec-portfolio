@@ -1,164 +1,207 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 1100" style="background:#0a0f0a;border-radius:8px">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 780 1280" style="background:#0a0f0a;border-radius:8px">
 <defs>
 <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
 <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </marker>
 </defs>
 
-<text font-family="'Courier New',monospace" font-size="15" font-weight="bold" fill="#00ff88" x="340" y="28" text-anchor="middle" letter-spacing="4">NETWORK TOPOLOGY</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c3a" x="340" y="46" text-anchor="middle" letter-spacing="3">LOGICAL MAP — THERON'S FLEET — 2026</text>
+<!-- Title -->
+<text font-family="'Courier New',monospace" font-size="15" font-weight="bold" fill="#00ff88" x="390" y="28" text-anchor="middle" letter-spacing="4">NETWORK TOPOLOGY</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c3a" x="390" y="46" text-anchor="middle" letter-spacing="3">LOGICAL MAP — THERON'S FLEET — 2026</text>
 
-<rect x="20" y="56" width="640" height="58" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
+<!-- WAN -->
+<rect x="20" y="56" width="740" height="58" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="72" letter-spacing="2">WAN</text>
-<rect x="240" y="66" width="200" height="38" rx="4" fill="#0d1f0d" stroke="#00ff88" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="13" font-weight="bold" fill="#00ff88" x="340" y="81" text-anchor="middle" dominant-baseline="central">INTERNET</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="340" y="97" text-anchor="middle" dominant-baseline="central">0.0.0.0/0</text>
+<rect x="290" y="66" width="200" height="38" rx="4" fill="#0d1f0d" stroke="#00ff88" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="13" font-weight="bold" fill="#00ff88" x="390" y="81" text-anchor="middle" dominant-baseline="central">INTERNET</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="390" y="97" text-anchor="middle" dominant-baseline="central">0.0.0.0/0</text>
 
-<line x1="340" y1="114" x2="340" y2="138" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="390" y1="114" x2="390" y2="138" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
 
-<rect x="20" y="138" width="640" height="58" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
+<!-- ISP Gateway -->
+<rect x="20" y="138" width="740" height="58" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="154" letter-spacing="2">ISP GATEWAY</text>
-<rect x="210" y="148" width="260" height="38" rx="4" fill="#0a1a10" stroke="#1a7a45" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00cc66" x="340" y="163" text-anchor="middle" dominant-baseline="central">ISP GATEWAY</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="340" y="179" text-anchor="middle" dominant-baseline="central">Double NAT resolved via DMZ</text>
+<rect x="260" y="148" width="260" height="38" rx="4" fill="#0a1a10" stroke="#1a7a45" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00cc66" x="390" y="163" text-anchor="middle" dominant-baseline="central">ISP GATEWAY</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="390" y="179" text-anchor="middle" dominant-baseline="central">Double NAT resolved via DMZ</text>
 
-<line x1="340" y1="186" x2="340" y2="210" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="390" y1="186" x2="390" y2="210" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
 
-<rect x="20" y="210" width="640" height="58" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
+<!-- Security Layer -->
+<rect x="20" y="210" width="740" height="58" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="226" letter-spacing="2">SECURITY LAYER</text>
-<rect x="170" y="220" width="340" height="38" rx="4" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ccff" x="340" y="235" text-anchor="middle" dominant-baseline="central">TP-LINK ARCHER BE700</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c7a" x="340" y="251" text-anchor="middle" dominant-baseline="central">WiFi 7 · WPA3 · Quad9 DNS · WireGuard VPN server</text>
+<rect x="210" y="220" width="360" height="38" rx="4" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ccff" x="390" y="235" text-anchor="middle" dominant-baseline="central">TP-LINK ARCHER BE700</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c7a" x="390" y="251" text-anchor="middle" dominant-baseline="central">WiFi 7 · WPA3 · Quad9 DNS · WireGuard VPN server</text>
 
-<rect x="20" y="278" width="640" height="38" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
-<text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ff88" x="340" y="293" text-anchor="middle" dominant-baseline="central">MULLVAD VPN</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="340" y="309" text-anchor="middle" dominant-baseline="central">Available on all machines and devices — WireGuard protocol</text>
+<!-- Mullvad VPN -->
+<rect x="20" y="278" width="740" height="38" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
+<text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ff88" x="390" y="293" text-anchor="middle" dominant-baseline="central">MULLVAD VPN</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="390" y="309" text-anchor="middle" dominant-baseline="central">Available on all machines and devices — WireGuard protocol</text>
 
-<line x1="340" y1="316" x2="340" y2="336" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="390" y1="316" x2="390" y2="336" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
 
-<rect x="20" y="336" width="640" height="360" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
+<!-- LAN outer container -->
+<rect x="20" y="336" width="740" height="530" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="352" letter-spacing="2">LAN — MAIN NETWORK</text>
 
-<rect x="30" y="360" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="375" text-anchor="middle" dominant-baseline="central">THINKPAD E16 GEN 2</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="391" text-anchor="middle" dominant-baseline="central">EndeavourOS · 64GB</text>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- LEFT COLUMN — no-VM machines                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
 
-<rect x="30" y="418" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="433" text-anchor="middle" dominant-baseline="central">HP PROBOOK 450 G7</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="449" text-anchor="middle" dominant-baseline="central">Arch/Kali · 32GB</text>
+<!-- ProBook 450 G7 — no VMs -->
+<rect x="30" y="362" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="377" text-anchor="middle" dominant-baseline="central">HP PROBOOK 450 G7</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="393" text-anchor="middle" dominant-baseline="central">Arch/Kali dual-boot · 32GB</text>
 
-<rect x="30" y="476" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="491" text-anchor="middle" dominant-baseline="central">BIGDELL 5680</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="507" text-anchor="middle" dominant-baseline="central">CachyOS · 16GB</text>
+<!-- BigDell 5680 — no VMs -->
+<rect x="30" y="420" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="435" text-anchor="middle" dominant-baseline="central">BIGDELL 5680</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="451" text-anchor="middle" dominant-baseline="central">CachyOS · 16GB</text>
 
-<rect x="30" y="534" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="549" text-anchor="middle" dominant-baseline="central">OPTIPLEX 3040</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="565" text-anchor="middle" dominant-baseline="central">Debian 13 Trixie · 16GB</text>
+<!-- OptiPlex 3040 — no VMs -->
+<rect x="30" y="478" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="493" text-anchor="middle" dominant-baseline="central">OPTIPLEX 3040</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian 13 Trixie · 16GB</text>
 
-<rect x="30" y="592" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="607" text-anchor="middle" dominant-baseline="central">INSPIRON 3501</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="623" text-anchor="middle" dominant-baseline="central">Linux Mint 22.3 · 8GB</text>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- MIDDLE SECTION — VM host groups                                -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
 
-<rect x="245" y="360" width="190" height="44" rx="4" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00ccff" x="340" y="375" text-anchor="middle" dominant-baseline="central">THINKBOOK 21KK</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c7a" x="340" y="391" text-anchor="middle" dominant-baseline="central">Windows 11 Pro · 32GB</text>
+<!-- ── GROUP: ThinkPad E16 Gen 2 ── -->
+<rect x="238" y="358" width="210" height="164" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text font-family="'Courier New',monospace" font-size="8" fill="#1a5c3a" x="248" y="371" letter-spacing="1">KVM HOST</text>
 
-<rect x="245" y="418" width="190" height="44" rx="4" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#88cc00" x="340" y="433" text-anchor="middle" dominant-baseline="central">KALI 2026.1 VM</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#4a6a10" x="340" y="449" text-anchor="middle" dominant-baseline="central">QEMU/KVM · ThinkPad</text>
+<!-- ThinkPad host card -->
+<rect x="244" y="376" width="198" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="343" y="391" text-anchor="middle" dominant-baseline="central">THINKPAD E16 GEN 2</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="343" y="407" text-anchor="middle" dominant-baseline="central">EndeavourOS · 64GB</text>
 
-<rect x="245" y="476" width="190" height="44" rx="4" fill="#0f1520" stroke="#cc6600" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#cc6600" x="340" y="491" text-anchor="middle" dominant-baseline="central">REMNUX VM</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#7a3a10" x="340" y="507" text-anchor="middle" dominant-baseline="central">QEMU/KVM · ThinkPad · Malware Analysis</text>
+<!-- ThinkPad VM: Kali 2026.1 -->
+<rect x="256" y="432" width="174" height="36" rx="4" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#88cc00" x="343" y="444" text-anchor="middle" dominant-baseline="central">KALI LINUX 2026.1</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#4a6a10" x="343" y="460" text-anchor="middle" dominant-baseline="central">QEMU/KVM · pentest platform</text>
 
-<rect x="245" y="534" width="190" height="44" rx="4" fill="#151a0a" stroke="#44aa44" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#44aa44" x="340" y="549" text-anchor="middle" dominant-baseline="central">DEVUAN VM</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#2a6a2a" x="340" y="565" text-anchor="middle" dominant-baseline="central">QEMU/KVM · Inspiron 3501</text>
+<!-- ThinkPad VM: REMnux -->
+<rect x="256" y="480" width="174" height="36" rx="4" fill="#0f1520" stroke="#cc6600" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#cc6600" x="343" y="492" text-anchor="middle" dominant-baseline="central">REMNUX NOBLE</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#7a3a10" x="343" y="508" text-anchor="middle" dominant-baseline="central">QEMU/KVM · malware analysis</text>
 
-<rect x="245" y="592" width="190" height="44" rx="4" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#88cc00" x="340" y="607" text-anchor="middle" dominant-baseline="central">KALI LINUX VM</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#4a6a10" x="340" y="623" text-anchor="middle" dominant-baseline="central">VirtualBox · ThinkBook</text>
+<!-- ── GROUP: Inspiron 3501 ── -->
+<rect x="238" y="536" width="210" height="116" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text font-family="'Courier New',monospace" font-size="8" fill="#1a5c3a" x="248" y="549" letter-spacing="1">KVM HOST</text>
 
-<rect x="245" y="650" width="190" height="44" rx="4" fill="#151a0a" stroke="#44aa44" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#44aa44" x="340" y="665" text-anchor="middle" dominant-baseline="central">DEVUAN VM</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#2a6a2a" x="340" y="681" text-anchor="middle" dominant-baseline="central">QEMU/KVM · Inspiron 3501</text>
+<!-- Inspiron 3501 host card -->
+<rect x="244" y="554" width="198" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="343" y="569" text-anchor="middle" dominant-baseline="central">INSPIRON 3501</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="343" y="585" text-anchor="middle" dominant-baseline="central">Linux Mint 22.3 · 8GB</text>
 
-<rect x="460" y="360" width="190" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="555" y="375" text-anchor="middle" dominant-baseline="central">GALAXY S23 ULTRA</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="555" y="391" text-anchor="middle" dominant-baseline="central">Android · WiFi</text>
+<!-- Inspiron VM: Devuan -->
+<rect x="256" y="610" width="174" height="36" rx="4" fill="#151a0a" stroke="#44aa44" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#44aa44" x="343" y="622" text-anchor="middle" dominant-baseline="central">DEVUAN VM</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#2a6a2a" x="343" y="638" text-anchor="middle" dominant-baseline="central">QEMU/KVM</text>
 
-<rect x="460" y="418" width="190" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="555" y="433" text-anchor="middle" dominant-baseline="central">GALAXY S10 FE</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="555" y="449" text-anchor="middle" dominant-baseline="central">Android · WiFi</text>
+<!-- ── GROUP: ThinkBook 21KK ── -->
+<rect x="238" y="666" width="210" height="116" rx="4" fill="none" stroke="#1a2a3a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text font-family="'Courier New',monospace" font-size="8" fill="#1a3a5c" x="248" y="679" letter-spacing="1">VBOX HOST</text>
 
-<rect x="460" y="476" width="190" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="555" y="491" text-anchor="middle" dominant-baseline="central">ARCH LINUX USB</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="555" y="507" text-anchor="middle" dominant-baseline="central">Portable · diagnostics</text>
+<!-- ThinkBook host card -->
+<rect x="244" y="684" width="198" height="44" rx="4" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00ccff" x="343" y="699" text-anchor="middle" dominant-baseline="central">THINKBOOK 21KK</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c7a" x="343" y="715" text-anchor="middle" dominant-baseline="central">Windows 11 Pro · 32GB</text>
 
-<rect x="460" y="534" width="190" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="555" y="549" text-anchor="middle" dominant-baseline="central">SLACKWARE USB</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="555" y="565" text-anchor="middle" dominant-baseline="central">Installer · learning</text>
+<!-- ThinkBook VM: Kali VirtualBox -->
+<rect x="256" y="740" width="174" height="36" rx="4" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#88cc00" x="343" y="752" text-anchor="middle" dominant-baseline="central">KALI LINUX VM</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#4a6a10" x="343" y="768" text-anchor="middle" dominant-baseline="central">VirtualBox</text>
 
-<rect x="20" y="710" width="640" height="66" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="726" letter-spacing="2">IOT VLAN — CLIENT ISOLATED</text>
-<rect x="220" y="720" width="240" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="340" y="735" text-anchor="middle" dominant-baseline="central">LG NANOCELL 55"</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="340" y="751" text-anchor="middle" dominant-baseline="central">Smart TV · Cat6 to router</text>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- RIGHT COLUMN — mobile and portable devices                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
 
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="340" y="800" text-anchor="middle" letter-spacing="2">— PLANNED / ASPIRATIONAL —</text>
+<rect x="462" y="362" width="286" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="605" y="377" text-anchor="middle" dominant-baseline="central">GALAXY S23 ULTRA</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="393" text-anchor="middle" dominant-baseline="central">Android · WiFi</text>
 
-<rect x="20" y="808" width="640" height="140" rx="4" fill="none" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="8 5"/>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="824" letter-spacing="2">ASPIRATIONAL</text>
+<rect x="462" y="420" width="286" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="605" y="435" text-anchor="middle" dominant-baseline="central">GALAXY S10 FE</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="451" text-anchor="middle" dominant-baseline="central">Android · WiFi</text>
 
-<rect x="30" y="832" width="148" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="104" y="847" text-anchor="middle" dominant-baseline="central">PI-HOLE</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="104" y="863" text-anchor="middle" dominant-baseline="central">On OptiPlex</text>
+<rect x="462" y="478" width="286" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="605" y="493" text-anchor="middle" dominant-baseline="central">ARCH LINUX USB</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="509" text-anchor="middle" dominant-baseline="central">Portable · diagnostics</text>
 
-<rect x="192" y="832" width="148" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="266" y="847" text-anchor="middle" dominant-baseline="central">NAS STORAGE</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="266" y="863" text-anchor="middle" dominant-baseline="central">Dedicated device</text>
+<rect x="462" y="536" width="286" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="605" y="551" text-anchor="middle" dominant-baseline="central">SLACKWARE USB</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="567" text-anchor="middle" dominant-baseline="central">Installer · learning</text>
 
-<rect x="354" y="832" width="148" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="428" y="847" text-anchor="middle" dominant-baseline="central">IDS — SURICATA</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="428" y="863" text-anchor="middle" dominant-baseline="central">Network monitor</text>
+<!-- IoT VLAN -->
+<rect x="20" y="878" width="740" height="66" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="894" letter-spacing="2">IOT VLAN — CLIENT ISOLATED</text>
+<rect x="270" y="888" width="240" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="390" y="903" text-anchor="middle" dominant-baseline="central">LG NANOCELL 55"</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="390" y="919" text-anchor="middle" dominant-baseline="central">Smart TV · Cat6 to router</text>
 
-<rect x="516" y="832" width="134" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="583" y="847" text-anchor="middle" dominant-baseline="central">DEDICATED FW</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="583" y="863" text-anchor="middle" dominant-baseline="central">pfSense/OPNsense</text>
+<!-- Planned / Aspirational -->
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="390" y="966" text-anchor="middle" letter-spacing="2">— PLANNED / ASPIRATIONAL —</text>
 
-<rect x="30" y="890" width="148" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="104" y="905" text-anchor="middle" dominant-baseline="central">WEB SERVER</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="104" y="921" text-anchor="middle" dominant-baseline="central">Nginx / Caddy</text>
+<rect x="20" y="974" width="740" height="140" rx="4" fill="none" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="8 5"/>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="990" letter-spacing="2">ASPIRATIONAL</text>
 
-<rect x="192" y="890" width="148" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="266" y="905" text-anchor="middle" dominant-baseline="central">MAIL SERVER</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="266" y="921" text-anchor="middle" dominant-baseline="central">Someday maybe</text>
+<rect x="30" y="998" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="110" y="1013" text-anchor="middle" dominant-baseline="central">PI-HOLE</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="110" y="1029" text-anchor="middle" dominant-baseline="central">On OptiPlex</text>
 
-<rect x="20" y="962" width="640" height="122" rx="4" fill="#0a0f0a" stroke="#1a3a2a" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="978" letter-spacing="2">LEGEND</text>
+<rect x="204" y="998" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="284" y="1013" text-anchor="middle" dominant-baseline="central">NAS STORAGE</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="284" y="1029" text-anchor="middle" dominant-baseline="central">Dedicated device</text>
 
-<rect x="40" y="988" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1000">Physical Linux machines</text>
+<rect x="378" y="998" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="458" y="1013" text-anchor="middle" dominant-baseline="central">IDS — SURICATA</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="458" y="1029" text-anchor="middle" dominant-baseline="central">Network monitor</text>
 
-<rect x="40" y="1010" width="20" height="14" rx="2" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1022">Virtual machines (QEMU/KVM or VirtualBox)</text>
+<rect x="552" y="998" width="198" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="651" y="1013" text-anchor="middle" dominant-baseline="central">DEDICATED FW</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="651" y="1029" text-anchor="middle" dominant-baseline="central">pfSense/OPNsense</text>
 
-<rect x="40" y="1032" width="20" height="14" rx="2" fill="#0f1520" stroke="#cc6600" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1044">Malware analysis VM (REMnux)</text>
+<rect x="30" y="1056" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="110" y="1071" text-anchor="middle" dominant-baseline="central">WEB SERVER</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="110" y="1087" text-anchor="middle" dominant-baseline="central">Nginx / Caddy</text>
 
-<rect x="40" y="1054" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1066">Windows machine</text>
+<rect x="204" y="1056" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="284" y="1071" text-anchor="middle" dominant-baseline="central">MAIL SERVER</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="284" y="1087" text-anchor="middle" dominant-baseline="central">Someday maybe</text>
 
-<rect x="350" y="988" width="20" height="14" rx="2" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="378" y="1000">Mobile / portable</text>
+<!-- Legend -->
+<rect x="20" y="1128" width="740" height="136" rx="4" fill="#0a0f0a" stroke="#1a3a2a" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="1144" letter-spacing="2">LEGEND</text>
 
-<rect x="350" y="1010" width="20" height="14" rx="2" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="4 2"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="378" y="1022">Aspirational / planned</text>
+<rect x="40" y="1154" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1166">Physical Linux machines</text>
 
-<rect x="350" y="1032" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="378" y="1044">Network infrastructure</text>
+<rect x="40" y="1176" width="20" height="14" rx="2" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1188">Virtual machines (QEMU/KVM or VirtualBox)</text>
 
-<rect x="350" y="1054" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="378" y="1066">VPN layer</text>
+<rect x="40" y="1198" width="20" height="14" rx="2" fill="#0f1520" stroke="#cc6600" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1210">Malware analysis VM (REMnux)</text>
+
+<rect x="40" y="1220" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1232">Windows machine</text>
+
+<rect x="400" y="1154" width="20" height="14" rx="2" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1166">Mobile / portable</text>
+
+<rect x="400" y="1176" width="20" height="14" rx="2" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="4 2"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1188">Aspirational / planned</text>
+
+<rect x="400" y="1198" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1210">Network infrastructure</text>
+
+<rect x="400" y="1220" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1232">VPN layer</text>
+
+<!-- Dashed group border legend -->
+<rect x="400" y="1242" width="20" height="14" rx="2" fill="none" stroke="#1a3a2a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1254">VM host group (KVM / VirtualBox)</text>
 
 </svg>
