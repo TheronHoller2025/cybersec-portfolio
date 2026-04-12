@@ -88,7 +88,7 @@ order is followed.
 - libvirt networking: https://wiki.libvirt.org/VirtualNetworking.html
 - Kali Linux: https://www.kali.org/
 - REMnux: https://remnux.org/
-- REMnux KVM/QEMU setup: [remnux-kvm-setup2.md](remnux-kvm-setup2.md)
+- REMnux KVM/QEMU setup: [remnux-kvm-setup.md](remnux-kvm-setup.md)
 
 ---
 
