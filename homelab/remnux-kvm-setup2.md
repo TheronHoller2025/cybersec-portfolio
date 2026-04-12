@@ -660,4 +660,202 @@ During the installation, the following tools were observed being configured (par
 
 ---
 
+---
+
+## Post-Setup Incident: Display Scaling Regression — April 12, 2026
+
+### Background
+
+After the clean baseline snapshot was taken and the VM was in use for several weeks, the display scaling issue returned. The VM was again stuck at 640x480 and the mouse cursor was invisible in the virt-manager window. Running `sudo apt update && sudo apt full-upgrade -y` followed by a reboot did not fix it. `spice-vdagent` was already installed and `spice-vdagentd` was showing as active.
+
+This was the third time the display issue had appeared across REMnux VM attempts. Each previous attempt had treated it as a `spice-vdagent` problem. This time the root cause was actually identified.
+
+---
+
+### Diagnosis
+
+The qemu-guest-agent channel was connected, which allowed running diagnostic commands inside the VM from the host without needing a usable display.
+
+**Step 1 — Verified spice-vdagentd was running:**
+
+```bash
+systemctl status spice-vdagentd
+```
+
+Result: active (running). Package `spice-vdagent` 0.22.1-4build3 installed. This ruled out the daemon as the problem.
+
+**Step 2 — Checked the user-session agent:**
+
+```bash
+# run via guest-agent as root, checking the remnux user's systemd session
+systemctl --user -M remnux@ status spice-vdagent
+```
+
+Result: `inactive (dead)`. The user-level `spice-vdagent.service` was not running. The autostart desktop entry at `/etc/xdg/autostart/spice-vdagent.desktop` existed and was correctly configured — but it was never triggering.
+
+**Step 3 — Checked the session type:**
+
+```bash
+cat /proc/$(pgrep gnome-shell | head -1)/environ | tr '\0' '\n' | grep XDG_SESSION_TYPE
+```
+
+Result:
+
+```
+XDG_SESSION_TYPE=wayland
+```
+
+**Root cause identified:** The guest was running GNOME on Wayland. `spice-vdagent` only works on X11. In a Wayland session it does nothing — the user-session agent silently fails to connect and the SPICE channel has no mechanism to negotiate resolution changes. Every previous fix attempt (reinstall, restart, `apt upgrade`) was targeting the wrong layer entirely.
+
+---
+
+### Fix
+
+`/etc/gdm3/custom.conf` already contained the correct fix as a commented-out line:
+
+```
+#WaylandEnable=false
+```
+
+Uncommented it:
+
+```bash
+sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/' /etc/gdm3/custom.conf
+```
+
+Rebooted. GDM started an X11 session. `spice-vdagent` connected immediately. Resolution auto-resized with the virt-manager window and the cursor appeared.
+
+---
+
+### Why This Kept Happening
+
+REMnux Noble (Ubuntu 24.04-based) defaults to GNOME on Wayland via GDM. The Kali 2026.1 VM on the same host had previously had its display issue fixed by *switching to Wayland* (X11 → Wayland) — the opposite fix. Both fixes are correct for their respective environments: Kali's GNOME/Wayland session handles SPICE display through Mutter's native compositor path, while REMnux's setup required X11 for `spice-vdagent` to function.
+
+The deeper lesson: display scaling in QEMU/KVM+SPICE is not just about `spice-vdagent`. It depends on the interaction between the SPICE protocol, the guest's display server (X11 vs Wayland), and whether the compositor handles SPICE resize hints natively. Treating every instance as a `spice-vdagent` reinstall problem missed this entirely.
+
+---
+
+### Permanence
+
+`WaylandEnable=false` in `/etc/gdm3/custom.conf` is a persistent config file. It survives reboots and `apt full-upgrade`. The only way it reverts is if a future GDM package upgrade ships a new `custom.conf` and overwrites it — apt prompts on config file conflicts in that case.
+
+---
+
+---
+
+## Post-Setup Incident: Display Still Stuck at 640x480 After Wayland Fix — April 12, 2026
+
+### Background
+
+After the Wayland fix (above) forced GDM to start an X11 session, the mouse cursor became visible — confirming X11 was active and `spice-vdagent` was running. However, the display was still stuck at 640x480 and did not auto-resize with the virt-manager window. The `spice-vdagent` package was installed and both the system daemon and the user session agent were running.
+
+---
+
+### Diagnosis
+
+Diagnostic commands were run inside the VM via `virsh qemu-agent-command` from the host, since the QEMU guest agent channel (`org.qemu.guest_agent.0`) was connected and usable.
+
+**Step 1 — Confirmed VM XML was correct:**
+
+```bash
+virsh -c qemu:///system dumpxml REmnux | grep -A5 -E 'graphics|channel|controller|serial'
+```
+
+Result: `virtio-serial` controller present, `spicevmc` channel with `state='connected'`, SPICE graphics on port 5900. The VM configuration was not the problem.
+
+**Step 2 — Confirmed both spice-vdagent processes were running:**
+
+```bash
+ps aux | grep spice-vdagent
+ls /run/spice-vdagentd/
+```
+
+Result: Both `spice-vdagentd` (root, PID 1480) and `spice-vdagent` (remnux user, PID 1456) were running. The socket `/run/spice-vdagentd/spice-vdagent-sock` existed. No problem here.
+
+**Step 3 — Checked xrandr:**
+
+```bash
+DISPLAY=:0 XAUTHORITY=/run/user/1000/gdm/Xauthority xrandr
+```
+
+Result:
+
+```
+Screen 0: minimum 320 x 200, current 640 x 480, maximum 4096 x 4096
+None-1 connected primary 640x480+0+0 (normal left inverted right x axis y axis) 0mm x 0mm
+   640x480       60.00*+
+```
+
+The output name `None-1` is abnormal. In a working KMS/DRM setup with virtio-gpu, outputs are named `Virtual-1` or similar. `None-1` means X11 found no real DRM device and fell back to a framebuffer with no resize capability. `spice-vdagent` cannot resize what it can't negotiate with xrandr.
+
+**Step 4 — Checked the Xorg log:**
+
+```bash
+cat /home/remnux/.local/share/xorg/Xorg.0.log | head -80
+```
+
+Result (critical line):
+
+```
+[14.299] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.8.0-107-generic root=UUID=... ro nomodeset
+```
+
+**Root cause identified:** The kernel was booting with `nomodeset`. This parameter disables KMS (Kernel Mode Setting), which prevents the `virtio-gpu` DRM driver from initializing. Without a DRM device, X11's `modesetting` driver has no KMS backend to work with — it falls back to a dumb framebuffer at the BIOS-level 640x480 resolution. The display output gets named `None-1` because there is no real device behind it. `spice-vdagent` was running correctly but had nothing it could resize.
+
+---
+
+### Fix
+
+**Read the current GRUB config:**
+
+```bash
+cat /etc/default/grub
+```
+
+Result confirmed:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT=" nomodeset"
+```
+
+**Remove `nomodeset`:**
+
+```bash
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=" nomodeset"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/' /etc/default/grub
+```
+
+**Regenerate GRUB config:**
+
+```bash
+update-grub
+```
+
+**Reboot:**
+
+```bash
+reboot
+```
+
+After reboot, xrandr shows `Virtual-1` with multiple resolution modes available, the VM window auto-resizes correctly, and display scaling works as expected.
+
+---
+
+### Why nomodeset Was Set
+
+`nomodeset` is sometimes added to the kernel command line as a workaround for display issues during initial VM setup — particularly when a VM first boots with a generic VGA framebuffer before GPU drivers are established. It prevents the GPU driver from taking over the display during boot, which can resolve black screens or corrupt display output in certain configurations. In this case it appears to have been set at some point as a troubleshooting step and never removed, causing the opposite problem: the GPU driver never initialized at all.
+
+---
+
+### Permanence
+
+The change is permanent. `/etc/default/grub` is a config file that persists across reboots. `update-grub` regenerated `/boot/grub/grub.cfg` from it. The `nomodeset` parameter is gone from every future boot unless manually re-added.
+
+---
+
+### Key Lesson
+
+`nomodeset` disables KMS globally. In a QEMU/KVM+SPICE VM with `virtio-vga`, removing KMS means the virtio-gpu DRM driver never initializes — X11 falls back to a basic framebuffer, xrandr output shows as `None-1` with only 640x480, and SPICE display negotiation through `spice-vdagent` stops working entirely. If dynamic display scaling stops working after what should be a working `spice-vdagent` setup, check `dmesg` or the Xorg log for `nomodeset` in the kernel command line before assuming the agent is broken.
+
+---
+
 *Part of the cybersecurity homelab portfolio at [github.com/TheronHoller2025/cybersec-portfolio](https://github.com/TheronHoller2025/cybersec-portfolio)*
