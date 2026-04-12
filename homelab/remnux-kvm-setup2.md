@@ -666,7 +666,7 @@ During the installation, the following tools were observed being configured (par
 
 ### Background
 
-After the clean baseline snapshot was taken and the VM was in use for several weeks, the display scaling issue returned. The VM was again stuck at 640x480 and the mouse cursor was invisible in the virt-manager window. Running `sudo apt update && sudo apt full-upgrade -y` followed by a reboot did not fix it. `spice-vdagent` was already installed and `spice-vdagentd` was showing as active.
+After the clean baseline snapshot was taken and the VM was not in use for several weeks, the display scaling issue returned. The VM was again stuck at 640x480 and the mouse cursor was invisible in the virt-manager window. Running `sudo apt update && sudo apt full-upgrade -y` followed by a reboot did not fix it. `spice-vdagent` was already installed and `spice-vdagentd` was showing as active.
 
 This was the third time the display issue had appeared across REMnux VM attempts. Each previous attempt had treated it as a `spice-vdagent` problem. This time the root cause was actually identified.
 
