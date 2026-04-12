@@ -13,6 +13,7 @@ My long-term goal is remote cybersecurity work — specifically SOC analyst and 
 - [Certifications](certs/)
 - [Hardening Notes](hardening/)
 - [Study Notes](notes/)
+- [Malware Analysis](malware-analysis/)
 - [Portfolio Guide](PORTFOLIO-GUIDE.md)
 ---
 
@@ -95,6 +96,20 @@ Deployed REMnux Noble (Ubuntu 24.04-based) as a dedicated malware analysis sandb
 - AthenaOS VM decommissioned same session after kernel update left it unbootable — full incident documented
 
 **Full documentation:** [remnux-kvm-setup.md](homelab/remnux-kvm-setup.md)
+
+---
+
+### Malware Analysis — WannaCry Static Analysis
+**Tools:** REMnux Noble, `file`, `strings`, `sha256sum`, VirusTotal  
+First analysis exercise using the REMnux sandbox. Obtained a WannaCry sample from theZoo (public malware research repository) and performed static analysis without execution.
+
+**Key findings:**
+- Confirmed PE32 Windows executable — no extension spoofing
+- `diskpart.exe` internal PE filename — masquerade technique consistent with documented WannaCry VSS destruction behavior
+- 67/74 AV engine detections on VirusTotal; classified as ransomware + worm
+- SSH-related strings flagged for follow-up in dynamic analysis
+
+**Full documentation:** [wannacry-static-analysis.md](malware-analysis/wannacry-static-analysis.md)
 
 ---
 

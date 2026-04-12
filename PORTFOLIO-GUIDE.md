@@ -33,9 +33,12 @@ cybersec-portfolio/
 ├── hardening/
 │   └── lynis-audit-notes.md          ← System hardening documentation
 │
-└── certs/
-    ├── progress-tracker.md           ← Certification path and progress
-    └── google-it-support-cert.pdf    ← Google IT Support certificate
+├── certs/
+│   ├── progress-tracker.md           ← Certification path and progress
+│   └── google-it-support-cert.pdf    ← Google IT Support certificate
+│
+└── malware-analysis/
+    └── wannacry-static-analysis.md   ← WannaCry static analysis (REMnux)
 
 A note on folder organization:
 The homelab/ directory covers network and infrastructure builds — routers, VMs, topology, and device configuration. The hardening/ directory covers OS-level security hardening on individual machines, such as Lynis audits and system lockdown procedures. Some overlap exists by nature (e.g. router hardening lives in homelab/ because it is primarily an infrastructure build), but the distinction keeps infrastructure work separate from host-level security work. This structure may be consolidated in a future revision.
@@ -55,6 +58,7 @@ GitHub shows README by default. To see everything else:
 - [Certifications](certs/)
 - [Hardening Notes](hardening/)
 - [Study Notes](notes/)
+- [Malware Analysis](malware-analysis/)
 
 ---
 
@@ -72,6 +76,7 @@ After every completed activity I add documentation:
 | Hardening session | hardening/ |
 | Desktop app setup / system script | homelab/ |
 | AUR software build | homelab/ |
+| Malware analysis exercise | malware-analysis/ |
 
 ---
 
