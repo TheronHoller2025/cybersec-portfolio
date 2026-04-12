@@ -94,7 +94,7 @@ Deployed REMnux Noble (Ubuntu 24.04-based) as a dedicated malware analysis sandb
 - Snapshot taken at clean baseline post-install
 - AthenaOS VM decommissioned same session after kernel update left it unbootable — full incident documented
 
-**Full documentation:** [remnux-kvm-setup2.md](homelab/remnux-kvm-setup2.md)
+**Full documentation:** [remnux-kvm-setup.md](homelab/remnux-kvm-setup.md)
 
 ---
 

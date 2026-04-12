@@ -18,7 +18,7 @@ cybersec-portfolio/
 │   ├── machine-fleet.md              ← Full machine documentation
 │   ├── network-topology.md           ← Network map and diagram
 │   ├── qemu-kvm-kali-setup.md        ← QEMU/KVM setup documentation
-│   ├── remnux-kvm-setup2.md          ← REMnux VM setup + AthenaOS decommission
+│   ├── remnux-kvm-setup.md           ← REMnux VM setup + AthenaOS decommission
 │   ├── router-hardening-tp-link.md   ← BE700 router build
 │   ├── chromium-messenger-firejail.md ← Sandboxed Messenger web wrapper
 │   ├── arch-maintenance-script.md    ← Monthly Arch maintenance script
