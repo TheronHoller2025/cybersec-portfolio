@@ -1,5 +1,5 @@
 # QEMU/KVM Virtualization Lab
-## EndeavourOS ThinkPad E16 Gen 2 — 2026
+## EndeavourOS Lenovo ThinkPad E16 Gen 2 — 2026
 
 ---
 

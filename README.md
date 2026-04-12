@@ -75,7 +75,7 @@ Performed full Lynis security audit and hardening session on Arch Linux system:
 ---
 
 ### QEMU/KVM Virtualization Lab
-Set up professional virtualization environment on EndeavourOS (ThinkPad E16):
+Set up professional virtualization environment on EndeavourOS (Lenovo ThinkPad E16):
 - QEMU/KVM with libvirt configured
 - Kali Linux 2026.1 VM deployed
 - REMnux VM deployed (malware analysis sandbox)
@@ -130,7 +130,7 @@ Built `jellyfin-media-player` version 1.12.0-6 from the AUR on the ProBook. Key 
 
 | Machine | OS | Purpose |
 |---|---|---|
-| ThinkPad E16 Gen 2 | EndeavourOS + KDE Plasma 6 | Primary workstation, QEMU/KVM host |
+| Lenovo ThinkPad E16 Gen 2 | EndeavourOS + KDE Plasma 6 | Primary workstation, QEMU/KVM host |
 | HP ProBook 450 G7 | Arch Linux / Kali dual-boot | Secondary lab machine |
 | Dell Inspiron 5680 | CachyOS | Desktop workstation, 4-monitor setup |
 | Dell OptiPlex 3040 | Debian 13 Trixie | Server/lab machine |

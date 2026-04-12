@@ -177,7 +177,7 @@
 - Malware thinks it's in a real system — you watch through the glass taking notes
 
 ### Tools
-- **REMnux** — Linux distro built for malware analysis, pre-loaded with hundreds of tools. Active VM running on ThinkPad via QEMU/KVM.
+- **REMnux** — Linux distro built for malware analysis, pre-loaded with hundreds of tools. Active VM running on Lenovo ThinkPad via QEMU/KVM.
 - **Cuckoo Sandbox** — automated sandbox, throws suspicious file at it, produces full report
 - **Ghidra** — free reverse engineering tool (made by NSA), reads compiled malware code
 - **Binary Ninja** — alternative reverse engineering tool
@@ -282,7 +282,7 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 ### Machine Fleet
 | Machine | OS | Key Specs |
 |---|---|---|
-| ThinkPad E16 Gen 2 (Lenovo-EOS) | EndeavourOS (KDE) | Ryzen 7 7735HS, 64GB, QEMU/KVM, Kali 2026.1 VM + REMnux VM |
+| Lenovo ThinkPad E16 Gen 2 (Lenovo-EOS) | EndeavourOS (KDE) | Ryzen 7 7735HS, 64GB, QEMU/KVM, Kali 2026.1 VM + REMnux VM |
 | HP ProBook 450 G7 (archlaptop) | Arch Linux (KDE) / Kali Linux (KDE) — dual boot | i7-10510U, 32GB |
 | Dell Inspiron 5680 (BigDell) | CachyOS (KDE) | i7-8700, GTX 1060, 16GB, 4-monitor setup |
 | Dell OptiPlex 3040 | Debian 13 Trixie (Xfce4) | i7-6700, 16GB |
@@ -292,7 +292,7 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 ### Completed Projects
 - Local IT training program labs: Cisco Packet Tracer multi-subnet design, Windows Server 2016 (AD DS, DHCP, DNS, GPO, network shares), Pi-hole Raspberry Pi 4 capstone — documented in it-training.md
 - TP-Link Archer BE700 router hardened from scratch (WPA3, Quad9 DNS, WireGuard VPN, IoT VLAN)
-- Lynis audit + full system hardening on ThinkPad
+- Lynis audit + full system hardening on Lenovo ThinkPad
 - Authorized pentest against Jellyfin server (formal report written)
 - QEMU/KVM setup with Kali 2026.1 VM and REMnux VM on EndeavourOS
 - AthenaOS VM decommissioned April 2026 after kernel update left it unbootable — replaced with REMnux
