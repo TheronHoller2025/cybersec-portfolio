@@ -2,7 +2,7 @@
 
 **Author:** Theron Holler  
 **Date:** April 5, 2026  
-**Host Machine:** ThinkPad E16 Gen 2 — EndeavourOS (systemd), KDE Plasma/Wayland, Ryzen 7 7735HS, 64GB RAM  
+**Host Machine:** Lenovo ThinkPad E16 Gen 2 — EndeavourOS (systemd), KDE Plasma/Wayland, Ryzen 7 7735HS, 64GB RAM  
 **Hypervisor:** QEMU/KVM with virt-manager  
 **Guest:** REMnux Noble (Ubuntu 24.04-based malware analysis distro)
 
@@ -20,7 +20,7 @@ REMnux replaced an AthenaOS VM that was decommissioned on the same date after a 
 
 ### Background
 
-AthenaOS was a security-focused Arch-based Linux distribution running as a VM in QEMU/KVM on the ThinkPad. It was used for general security tooling and exploration. On April 5, 2026, a routine system update via `pacman` broke the VM's ability to boot, ultimately leading to the decision to decommission it and replace it with REMnux.
+AthenaOS was a security-focused Arch-based Linux distribution running as a VM in QEMU/KVM on the Lenovo ThinkPad. It was used for general security tooling and exploration. On April 5, 2026, a routine system update via `pacman` broke the VM's ability to boot, ultimately leading to the decision to decommission it and replace it with REMnux.
 
 ---
 
