@@ -142,7 +142,6 @@ managed by pacman.
 
 ## What I Learned
 
-- How to structure a bash script for sequential system maintenance tasks
 - How `pacman -Qdtq` + `pacman -Rns` works to find and remove orphaned
   packages — a two-step command that took some research to understand fully
 - What `paccache` does and why keeping every downloaded package version is

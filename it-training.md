@@ -1,7 +1,5 @@
 # Hands-On Labs — Local IT Training Program
 
-Hands-on lab work completed as part of coursework in a local IT training program. Labs cover core networking and Windows Server administration skills.
-
 ---
 
 ## Lab 1 — Cisco Packet Tracer: Multi-Subnet Network Design
@@ -36,13 +34,10 @@ SN5 serves as the point-to-point link between the two routers. A /30 subnet was 
 
 All ping tests completed successfully. Every device on every subnet was able to reach every other device across the full topology.
 
-### Skills Demonstrated
-
-- Subnetting and IP address planning
-- VLSM for point-to-point links
-- Router and switch configuration in Packet Tracer
-- Network topology design and documentation
-- End-to-end connectivity verification via ICMP ping
+### Skills
+- Subnetting and VLSM
+- Router and switch config in Packet Tracer
+- Connectivity verified via ICMP ping
 
 ---
 
@@ -110,17 +105,12 @@ Created and linked a GPO to restrict Control Panel access for non-IT users. Conf
 
 A wallpaper restriction GPO was also applied as part of the same policy.
 
-### Skills Demonstrated
+### Skills
+- AD DS, DHCP, DNS on Windows Server 2016
+- RBAC via group membership and NTFS permissions
+- GPO creation, linking, and verification
+- Domain-joined Windows 10 client
 
-- Windows Server 2016 installation and configuration in a virtualized environment
-- Active Directory Domain Services setup and forest creation
-- DHCP scope configuration with exclusion ranges and lease management
-- DNS integration with AD DS
-- User account and security group management in Active Directory
-- Role-based access control via group membership and NTFS permissions
-- Network share creation with department-level permission segmentation
-- Domain joining Windows 10 clients
-- Group Policy Object (GPO) creation, linking, and testing
 ---
 
 ## Lab 3 — Pi-hole on Raspberry Pi 4: Network-Wide DNS Filtering
@@ -132,7 +122,7 @@ A wallpaper restriction GPO was also applied as part of the same policy.
 
 ### Overview
 
-Deployed Pi-hole on a Raspberry Pi 4 as a capstone project, creating a network-wide DNS sinkhole capable of blocking ads, trackers, and malicious domains for all devices on the network.
+Deployed Pi-hole on a Raspberry Pi 4 as a capstone project, creating a network-wide DNS sinkhole that blocks ads, trackers, and malicious domains for all devices on the network.
 
 ### What Was Built
 
@@ -149,12 +139,9 @@ Deployed Pi-hole on a Raspberry Pi 4 as a capstone project, creating a network-w
 
 SD card imaging required three attempts. Resolved a drive letter conflict by running GParted on a secondary machine to wipe and recreate the partition before re-imaging.
 
-### Skills Demonstrated
+### Skills
+- Raspberry Pi setup and OS imaging
+- Linux CLI, static IP, SSH remote admin
+- Pi-hole install and blocklist config
+- Troubleshooting under deadline (3 SD card attempts, drive letter conflict)
 
-- Raspberry Pi hardware setup and OS imaging
-- Linux CLI — nano, apt, ip, SSH
-- Static IP configuration via dhcpcd.conf
-- Remote administration via SSH (PuTTY)
-- DNS fundamentals and network-wide filtering concepts
-- Pi-hole installation, configuration, and blocklist management
-- Real-world troubleshooting under a project deadline

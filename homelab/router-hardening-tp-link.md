@@ -80,12 +80,10 @@ the references section at the bottom.
 
 ## Skills This Built
 
-- Router administration and security hardening
-- DNS security and upstream resolver configuration
-- VLAN creation and network segmentation
-- WireGuard VPN server setup and testing
+- Router hardening and DNS security config
+- VLAN segmentation and WireGuard VPN setup
 - NAT, DMZ, and port forwarding troubleshooting
-- WiFi 7 technology hands-on experience
+- WiFi 7 hands-on
 
 ---
 

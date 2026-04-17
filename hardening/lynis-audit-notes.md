@@ -6,8 +6,7 @@
 ## Overview
 
 Performed a full Lynis security audit on my Arch Linux system and
-worked through the recommendations systematically. Lynis is a
-battle-tested open source security auditing tool for Linux systems.
+worked through the recommendations systematically. Lynis is an open source security auditing tool for Linux systems.
 It scans the system and produces a hardening index score along with
 detailed recommendations.
 
@@ -84,16 +83,12 @@ reading about them.
 - How SSH key authentication works vs passwords
 - Why system time accuracy matters in security
 - How rootkit detection baselines work
-- The difference between fixing something and
-  understanding why it needed fixing
 
 ---
 
 ## Lynis Hardening Index
 
-Score improved after implementing recommendations.
-Exact scores not recorded but measurable improvement
-was confirmed on re-scan.
+Didn't record the before/after scores. Will capture them on the next run.
 
 ---
 

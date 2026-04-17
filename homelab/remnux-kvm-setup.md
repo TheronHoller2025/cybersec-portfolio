@@ -10,7 +10,7 @@
 
 ## Overview
 
-This document covers the full process of importing, configuring, and setting up a REMnux virtual machine in QEMU/KVM on EndeavourOS. It includes every command attempted — successful and failed — along with the reasoning behind each decision and the troubleshooting steps taken along the way. The goal is to serve as an accurate, honest reference for anyone doing the same setup.
+This document covers the full process of importing, configuring, and setting up a REMnux virtual machine in QEMU/KVM on EndeavourOS. It includes every command attempted — successful and failed — along with the reasoning behind each decision and the troubleshooting steps taken along the way.
 
 REMnux replaced an AthenaOS VM that was decommissioned on the same date after a failed kernel update left it unbootable. That incident is documented below before the REMnux setup steps.
 
@@ -568,7 +568,7 @@ sudo nmcli con up ethernet-enp1s0
 
 The official REMnux documentation specifies `remnux install` for both initial setup and ongoing updates — including for KVM/QEMU environments specifically. Initially `remnux upgrade` was run instead, which produced identical results. Both commands invoke the same underlying process.
 
-> **Lesson:** Always consult the official documentation for the specific hypervisor before running setup commands. The REMnux docs have a dedicated KVM/QEMU section with specific guidance.
+> **Note:** Ran `remnux upgrade` first instead of `remnux install` — both produce identical results. `remnux install` is the officially documented command.
 
 ### Running the installer
 
@@ -631,7 +631,6 @@ After confirming the installation results, a snapshot was taken in virt-manager 
 - REMnux sets `managed=false` in NetworkManager by default — likely intentional for air-gapped malware analysis workflows
 - Match the host VM display settings (Virtio video + Spice) to a known working VM before first boot
 - `spice-vdagent` must be installed inside the guest VM for dynamic display scaling to work
-- The official REMnux docs have a dedicated KVM/QEMU section — read it first
 - `remnux install` and `remnux upgrade` produce identical results; `remnux install` is the officially documented command
 - Speakeasy checksum failures are an upstream REMnux/Mandiant issue and will resolve when REMnux updates their salt states
 - Snapshot VMs before updates — especially on rolling release distros
