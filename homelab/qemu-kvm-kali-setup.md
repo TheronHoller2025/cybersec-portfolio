@@ -73,7 +73,6 @@ order is followed.
 
 ## What I Learned
 
-- How KVM virtualization differs from VirtualBox
 - How libvirt manages virtual networks
 - How virbr0 NAT bridge works
 - What APIPA addresses mean and why they happen

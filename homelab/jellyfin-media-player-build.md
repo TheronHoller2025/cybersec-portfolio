@@ -94,11 +94,9 @@ using the server's local address.
 
 ## Why a Native Player Instead of Browser
 
-- Browser access works but is a general-purpose tab — not optimized for media
-- Jellyfin Media Player provides a proper 10-foot interface
-- Better hardware decoding support
-- No browser security prompts for media playback
-- Cleaner, dedicated window for the media server
+- Browser works but it's a general-purpose tab — not built for media
+- Native player gets hardware decoding and a proper 10-foot interface
+- No browser prompts interrupting playback
 
 ---
 

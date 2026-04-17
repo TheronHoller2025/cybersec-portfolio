@@ -34,7 +34,7 @@ My long-term goal is remote cybersecurity work — specifically SOC analyst and 
 ## Projects
 
 ### Hands-On Labs — Local IT Training Program
-Completed structured hands-on labs covering core networking and Windows Server administration, culminating in a Pi-hole capstone project:
+Completed structured hands-on labs covering core networking and Windows Server administration, including a Pi-hole capstone project:
 - Cisco Packet Tracer: multi-subnet network design with VLSM (April 2025)
 - Windows Server 2016: AD DS, DHCP, DNS, GPO, and role-based network shares (April 2025)
 - Pi-hole on Raspberry Pi 4: network-wide DNS filtering capstone (Summer 2025)

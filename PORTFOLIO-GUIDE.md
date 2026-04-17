@@ -80,14 +80,6 @@ After every completed activity I add documentation:
 
 ---
 
-## About This Portfolio
-
-This portfolio documents real hands-on work —
-not just certifications. Every project listed
-was actually built, configured, or tested by me.
-
-Where things are aspirational or planned they
-are clearly marked as such.
 
 Built and maintained by Theron Holler - 
 Massachusetts — targeting remote cybersecurity
