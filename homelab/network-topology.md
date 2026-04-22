@@ -49,7 +49,7 @@ All primary workstations and laptops
 | Lenovo ThinkPad E16 Gen 2 | Main LAN | QEMU/KVM host, Mullvad app |
 | HP ProBook 450 G7 | Main LAN | Manual WireGuard via Mullvad keys over NetworkManager |
 | BigDell Inspiron 5680 | Main LAN | Desktop workstation |
-| OptiPlex 3040 | Main LAN | Lab server, future Pi-hole |
+| OptiPlex 3040 | Main LAN | Proxmox VE hypervisor, backup server |
 | Inspiron 3501 | Main LAN | General use |
 | ThinkBook 21KK | Main LAN | Windows environment, VirtualBox host |
 | Kali Linux 2026.1 VM | virbr0 (NAT) | QEMU/KVM on Lenovo ThinkPad |
@@ -79,7 +79,6 @@ All primary workstations and laptops
 |---|---|
 | Upstream DNS | Quad9 (9.9.9.9) |
 | Malware blocking | Yes — via Quad9 |
-| Local DNS | Pi-hole planned on OptiPlex |
 
 ---
 
@@ -87,7 +86,7 @@ All primary workstations and laptops
 
 | Addition | Status |
 |---|---|
-| Pi-hole on OptiPlex | Planned |
+| Pi-hole | Planned — as Proxmox VM |
 | NAS/Storage server | Aspirational |
 | Dedicated IDS (Suricata) | Aspirational |
 | Dedicated firewall device | Aspirational |
@@ -95,4 +94,4 @@ All primary workstations and laptops
 
 ---
 
-*Last updated: April 2026*
+*Last updated: April 22nd, 2026*

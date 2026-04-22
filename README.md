@@ -99,6 +99,39 @@ Deployed REMnux Noble (Ubuntu 24.04-based) as a dedicated malware analysis sandb
 
 ---
 
+### Proxmox VE Homelab Server — Dell OptiPlex 3040
+Repurposed a Dell OptiPlex 3040 as a dedicated Proxmox VE hypervisor and backup server:
+- SSH key authentication (ed25519) configured for fully headless remote management
+- Wake-on-LAN configured across all three layers (NIC, NetworkManager, BIOS) — remote power-on confirmed
+- Proxmox VE 9.1 installed, no-subscription repos configured, system fully updated
+- 300GB LVM logical volume created and mounted at /backups for backup storage
+
+**Full documentation:** [proxmox-homelab-server.md](homelab/proxmox-homelab-server.md)
+
+---
+
+### ThinkPad BIOS Update + Automated Version Checker
+Updated the ThinkPad E16 Gen 2 BIOS manually — Lenovo does not publish LVFS capsules for this model:
+- Used `geteltorito` (AUR) to extract a bootable image from Lenovo's Bootable CD ISO, flashed via `dd`
+- Built a Python script that queries Lenovo's undocumented catalog XML endpoint to check for new BIOS versions
+- Automated with a systemd user service and weekly timer
+
+**Full documentation:** [thinkpad-bios-update.md](homelab/thinkpad-bios-update.md)
+
+---
+
+### Hardware-Agnostic Arch Linux USB
+Built a portable Arch Linux USB that boots on any x86_64 UEFI machine in the fleet:
+- GRUB installed with `--removable` — boots from generic EFI path, no NVRAM dependency
+- `autodetect` removed from mkinitcpio — hardware-agnostic initramfs covering all fleet hardware
+- Both `amd-ucode` and `intel-ucode` installed — correct microcode loaded at boot regardless of CPU
+- Full build scripted across seven shell scripts
+- Validated on different hardware than the build machine
+
+**Full documentation:** [arch-linux-usb-build.md](homelab/arch-linux-usb-build.md)
+
+---
+
 ### Malware Analysis — WannaCry Static Analysis
 **Tools:** REMnux Noble, `file`, `strings`, `sha256sum`, VirusTotal  
 First analysis exercise using the REMnux sandbox. Obtained a WannaCry sample from theZoo (public malware research repository) and performed static analysis without execution.
@@ -148,7 +181,7 @@ Built `jellyfin-media-player` version 1.12.0-6 from the AUR on the ProBook. Key 
 | Lenovo ThinkPad E16 Gen 2 | EndeavourOS + KDE Plasma 6 | Primary workstation, QEMU/KVM host |
 | HP ProBook 450 G7 | Arch Linux / Kali dual-boot | Secondary lab machine |
 | Dell Inspiron 5680 | CachyOS | Desktop workstation, 4-monitor setup |
-| Dell OptiPlex 3040 | Debian 13 Trixie | Server/lab machine |
+| Dell OptiPlex 3040 | Proxmox VE 9.1 | Hypervisor, backup server |
 | Dell Inspiron 3501 | Linux Mint 22.3 | General use, QEMU/KVM host |
 | Lenovo ThinkBook | Windows 11 Pro | Windows environment / VirtualBox |
 
@@ -157,7 +190,6 @@ Built `jellyfin-media-player` version 1.12.0-6 from the AUR on the ProBook. Key 
 ## Currently Learning
 
 - CompTIA Tech+ exam preparation
-- TryHackMe — SOC Level 1 path
 - Malware analysis and sandbox techniques
 - Network+ exam preparation
 
@@ -165,9 +197,9 @@ Built `jellyfin-media-player` version 1.12.0-6 from the AUR on the ProBook. Key 
 
 ## Contact
 
-- Location: Massachusetts (open to remote work)
+- Location: U.S.-based (open to remote work)
 - Local community college student — Hardware Fundamentals + Security courses
-- Available for remote roles — targeting Philippines-based remote work
+- Available for remote roles
 
 ---
 
