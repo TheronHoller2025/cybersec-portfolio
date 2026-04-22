@@ -23,7 +23,10 @@ cybersec-portfolio/
 │   ├── chromium-messenger-firejail.md ← Sandboxed Messenger web wrapper
 │   ├── arch-maintenance-script.md    ← Monthly Arch maintenance script
 │   ├── jellyfin-media-player-build.md ← Jellyfin Media Player AUR build
-│   └── network-topology.svg          ← Network diagram
+│   ├── network-topology.svg          ← Network diagram
+│   ├── proxmox-homelab-server.md     ← Proxmox VE build on OptiPlex
+│   ├── thinkpad-bios-update.md       ← BIOS update + automated version checker
+│   └── arch-linux-usb-build.md       ← Hardware-agnostic Arch Linux USB build
 │
 ├── images/                            ← Screenshots and diagrams
 │
@@ -81,10 +84,8 @@ After every completed activity I add documentation:
 ---
 
 
-Built and maintained by Theron Holler - 
-Massachusetts — targeting remote cybersecurity
-work from the Philippines 🇵🇭
+Built and maintained by Theron Holler — targeting remote cybersecurity work
 
 ---
 
-*Last updated: April 2026*
+*Last updated: April 22nd, 2026*

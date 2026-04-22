@@ -11,9 +11,9 @@ specific purpose and runs a deliberately chosen OS.
 
 ---
 
-## Primary Workstation
+## Laptops
 
-### Lenovo ThinkPad E16 Gen 2
+### Lenovo ThinkPad E16 Gen 2 — Primary Workstation
 | Field | Details |
 |---|---|
 | OS | EndeavourOS (KDE) |
@@ -30,24 +30,15 @@ specific purpose and runs a deliberately chosen OS.
 
 ---
 
-## Laptops
-
 ### HP ProBook 450 G7 — archlaptop
 | Field | Details |
 |---|---|
-| OS | Arch Linux (Zen kernel, KDE) / Kali Linux (KDE) dual-boot  |
+| OS | Arch Linux (Zen kernel, KDE) / Kali Linux (KDE) dual-boot |
 | CPU | Intel i7-10510U |
 | RAM | 32GB |
 | Purpose | Secondary lab machine, attack platform |
 | VPN | Manual WireGuard config when needed / Mullvad on Kali |
 | VMs | None |
-
-**ProBook Projects:**
-| Project | Documentation |
-|---|---|
-| Sandboxed Messenger web wrapper (Firejail + Chromium) | [chromium-messenger-firejail.md](chromium-messenger-firejail.md) |
-| Monthly Arch maintenance script | [arch-maintenance-script.md](arch-maintenance-script.md) |
-| Jellyfin Media Player AUR build (v1.12.0-6) | [jellyfin-media-player-build.md](jellyfin-media-player-build.md) |
 
 ---
 
@@ -62,7 +53,19 @@ specific purpose and runs a deliberately chosen OS.
 
 ---
 
-## Desktop Workstations
+### Lenovo ThinkBook 21KK
+| Field | Details |
+|---|---|
+| OS | Windows 11 Pro |
+| CPU | AMD Ryzen 5 7430U |
+| RAM | 32GB |
+| Purpose | Windows administration practice |
+| Tools | VirtualBox, Sysinternals Suite, PowerShell |
+| VMs | Kali |
+
+---
+
+## Desktops
 
 ### Dell Inspiron 5680 — BigDell
 | Field | Details |
@@ -82,27 +85,13 @@ specific purpose and runs a deliberately chosen OS.
 ### Dell OptiPlex 3040
 | Field | Details |
 |---|---|
-| OS | Debian 13 Trixie (Xfce4/X11) |
+| OS | Proxmox VE 9.1 |
 | CPU | Intel i7-6700 |
 | RAM | 16GB |
-| Display | 2x HP 24" 1080p |
-| Purpose | Lab server, hardening target, enumeration exercises |
-| VMs | None |
-| Planned | Pi-hole DNS server (direct install, not VM) |
-
----
-
-## Windows Environment
-
-### Lenovo ThinkBook 21KK
-| Field | Details |
-|---|---|
-| OS | Windows 11 Pro |
-| CPU | AMD Ryzen 5 7430U |
-| RAM | 32GB |
-| Purpose | Windows administration practice |
-| Tools | VirtualBox, Sysinternals Suite, PowerShell |
-| VMs | Kali |
+| Purpose | Hypervisor, backup server |
+| Access | Headless — web UI via local network, SSH from ThinkPad |
+| Backup Storage | 300GB LVM volume at /backups — Clonezilla images |
+| VMs | None currently |
 
 ---
 
@@ -119,7 +108,7 @@ specific purpose and runs a deliberately chosen OS.
 
 | Device | OS | Status |
 |---|---|---|
-| Arch Linux USB | Arch Linux | Active — used regularly for diagnostics |
+| Arch Linux USB | Arch Linux (Zen kernel) | Active — hardware-agnostic, boots on any machine |
 | Slackware USB | Slackware | Installer — attempted install, still learning |
 
 ---
@@ -150,7 +139,10 @@ specific purpose and runs a deliberately chosen OS.
 - Oracle VirtualBox virtualization setup with Kali
 - TP-Link BE700 router hardened from scratch
 - Pi-hole capstone at local IT training program (Summer 2025)
+- Proxmox VE 9.1 deployed on OptiPlex — hypervisor and backup server
+- Clonezilla full-system backup of ThinkPad NVMe (67GB compressed image on camel)
+- Hardware-agnostic Arch Linux USB built from scratch (Zen kernel, GRUB --removable)
 
 ---
 
-*Last updated: April 2026*
+*Last updated: April 22nd, 2026*
