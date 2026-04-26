@@ -110,6 +110,19 @@ Repurposed a Dell OptiPlex 3040 as a dedicated Proxmox VE hypervisor and backup 
 
 ---
 
+### WireGuard Port Migration & Remote Access — camel + eyeoftheneedle.dev
+Diagnosed carrier-level blocking of UDP 51820 and migrated camel's WireGuard server to UDP 443. Registered `eyeoftheneedle.dev` on Cloudflare and deployed a DDNS update script on camel — checks the public IP every five minutes via cron and calls the Cloudflare API only on change. Two bash aliases (`wg-home` / `wg-away`) handle endpoint switching between LAN and remote without editing any config files. SSH config updated to route through the WireGuard IP so `ssh camel` works from anywhere the tunnel is up.
+
+- WireGuard migrated from UDP 51820 → UDP 443 on camel; port forward updated on BE700
+- `eyeoftheneedle.dev` registered on Cloudflare (2 years, WHOIS privacy); `camel.eyeoftheneedle.dev` A record, DNS only
+- `/usr/local/bin/ddns-update.sh` on camel — Cloudflare API, scoped token, cron every 5 min
+- `wg-home` / `wg-away` aliases for endpoint switching; `ssh camel` routes via WireGuard IP
+- Router's built-in WireGuard (UDP 51820, S23 Ultra) kept separate — serves a different purpose
+
+**Full documentation:** [wireguard-ddns-setup.md](homelab/wireguard-ddns-setup.md)
+
+---
+
 ### ThinkPad BIOS Update + Automated Version Checker
 Updated the ThinkPad E16 Gen 2 BIOS manually — Lenovo does not publish LVFS capsules for this model:
 - Used `geteltorito` (AUR) to extract a bootable image from Lenovo's Bootable CD ISO, flashed via `dd`

@@ -26,7 +26,8 @@ cybersec-portfolio/
 │   ├── network-topology.svg          ← Network diagram
 │   ├── proxmox-homelab-server.md     ← Proxmox VE build on OptiPlex
 │   ├── thinkpad-bios-update.md       ← BIOS update + automated version checker
-│   └── arch-linux-usb-build.md       ← Hardware-agnostic Arch Linux USB build
+│   ├── arch-linux-usb-build.md       ← Hardware-agnostic Arch Linux USB build
+│   └── wireguard-ddns-setup.md       ← WireGuard port migration (443), Cloudflare DDNS on camel
 │
 ├── images/                            ← Screenshots and diagrams
 │
@@ -88,4 +89,4 @@ Built and maintained by Theron Holler — targeting remote cybersecurity work
 
 ---
 
-*Last updated: April 22nd, 2026*
+*Last updated: April 26th, 2026*

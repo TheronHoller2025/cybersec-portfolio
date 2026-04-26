@@ -49,7 +49,7 @@ All primary workstations and laptops
 | Lenovo ThinkPad E16 Gen 2 | Main LAN | QEMU/KVM host, Mullvad app |
 | HP ProBook 450 G7 | Main LAN | Manual WireGuard via Mullvad keys over NetworkManager |
 | BigDell Inspiron 5680 | Main LAN | Desktop workstation |
-| OptiPlex 3040 | Main LAN | Proxmox VE hypervisor, backup server |
+| OptiPlex 3040 | Main LAN | Proxmox VE hypervisor, backup server, WireGuard server — Kali Linux 2026.1 and REMnux VMs |
 | Inspiron 3501 | Main LAN | General use |
 | ThinkBook 21KK | Main LAN | Windows environment, VirtualBox host |
 | Kali Linux 2026.1 VM | virbr0 (NAT) | QEMU/KVM on Lenovo ThinkPad |
@@ -69,7 +69,11 @@ All primary workstations and laptops
 | Lenovo ThinkPad E16 | Mullvad | Mullvad app |
 | HP ProBook/Kali | Mullvad | Manual WireGuard config via NetworkManager |
 | All other machines | Mullvad | Available on all devices |
-| Router | WireGuard | Self-hosted VPN server for remote access |
+| Router (BE700) | WireGuard server | Built-in — UDP 51820 — S23 Ultra peered for home LAN access |
+| camel (OptiPlex 3040) | WireGuard server | Linux host — UDP 443 — remote access tunnel, all peers |
+
+These are two independent WireGuard servers serving different purposes.
+Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 ---
 
@@ -79,6 +83,7 @@ All primary workstations and laptops
 |---|---|
 | Upstream DNS | Quad9 (9.9.9.9) |
 | Malware blocking | Yes — via Quad9 |
+| DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, updated by script on camel |
 
 ---
 
@@ -94,4 +99,4 @@ All primary workstations and laptops
 
 ---
 
-*Last updated: April 22nd, 2026*
+*Last updated: April 26th, 2026*

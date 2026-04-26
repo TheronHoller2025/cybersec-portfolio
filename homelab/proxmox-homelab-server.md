@@ -51,6 +51,8 @@ Configured WoL across all three required layers:
 
 Tested: ThinkPad sends magic packet → OptiPlex powers on from off.
 
+**Update:** Wake-on-LAN was later found to be a hardware dead end on this machine. The Realtek RTL8168h NIC has no standby power in S5 on the OptiPlex 3040 — magic packets arrive but the NIC cannot act on them when fully powered off. No BIOS setting resolves this. The machine is now left on permanently with AC Recovery set to Power On, so it automatically boots after any power outage.
+
 **UFW:**
 Diagnosed and fixed a UFW bug on Debian where SSH was being blocked
 despite an allow rule existing. Re-enabled UFW after the fix.
@@ -90,9 +92,9 @@ approximately 295GB usable space.
 | Item | Status |
 |---|---|
 | Proxmox VE 9.1 | Running, fully updated |
-| Remote access | SSH + web UI from ThinkPad |
+| Remote access | SSH + Proxmox web UI via WireGuard — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
 | Backup volume (/backups) | Mounted, ~295GB usable |
-| Active VMs | None |
+| VMs | Kali Linux 2026.1, REMnux |
 
 ---
 
