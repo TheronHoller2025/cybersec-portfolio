@@ -224,7 +224,7 @@ Tech+ → A+ → Network+ → Security+ → eJPT → PNPT → OSCP
 - Tech+ — in progress
 - A+ — upcoming
 - Network+ — upcoming  
-- Security+ — target before Philippines / SOC visit
+- Security+ — target for SOC Tier 1 and analyst roles
 - eJPT → PNPT → OSCP — long term
 
 ### Key Point
@@ -285,7 +285,7 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 | Lenovo ThinkPad E16 Gen 2 (Lenovo-EOS) | EndeavourOS (KDE) | Ryzen 7 7735HS, 64GB, QEMU/KVM, Kali 2026.1 VM + REMnux VM |
 | HP ProBook 450 G7 (archlaptop) | Arch Linux (KDE) / Kali Linux (KDE) — dual boot | i7-10510U, 32GB |
 | Dell Inspiron 5680 (BigDell) | CachyOS (KDE) | i7-8700, GTX 1060, 16GB, 4-monitor setup |
-| Dell OptiPlex 3040 | Debian 13 Trixie (Xfce4) | i7-6700, 16GB |
+| Dell OptiPlex 3040 | Proxmox VE 9.1 | i7-6700, 16GB |
 | Dell Inspiron 3501 | Linux Mint 22.3 (Cinnamon) | i5-1035G1, 8GB, QEMU/KVM, Devuan VM |
 | Lenovo ThinkBook | Windows 11 Pro | Ryzen 5 7430U, VirtualBox, Kali VM |
 
@@ -305,7 +305,7 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 ## 10. CAREER & REMOTE WORK PATH
 
 ### Target Role
-Remote cybersecurity work — SOC Tier 1 Analyst or IT Support — earning USD from Philippines
+Remote cybersecurity work — SOC Tier 1 Analyst or IT Support — open to international remote teams
 
 ### Portfolio Building Blocks
 - Jellyfin pentest report

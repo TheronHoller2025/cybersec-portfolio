@@ -90,8 +90,9 @@ the references section at the bottom.
 ## Still On My To-Do List
 
 - DNS-over-TLS configuration
-- DDNS setup via No-IP for dynamic IP management
-- Pi-hole + Unbound integration on the Debian box
+- Pi-hole + Unbound integration (planned as Proxmox VM)
+
+DDNS is complete — `eyeoftheneedle.dev` registered on Cloudflare, automated update script running on camel. Full documentation: [wireguard-ddns-setup.md](wireguard-ddns-setup.md)
 
 ---
 

@@ -51,7 +51,7 @@
 - Focus: Networking concepts, infrastructure, security
 
 ### CompTIA Security+
-- Target before Philippines relocation
+- Target for SOC Tier 1 analyst roles
 - Required for SOC Tier 1 analyst roles
 
 ---

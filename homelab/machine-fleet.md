@@ -91,7 +91,7 @@ specific purpose and runs a deliberately chosen OS.
 | Purpose | Hypervisor, backup server |
 | Access | Headless — web UI via local network, SSH from ThinkPad |
 | Backup Storage | 300GB LVM volume at /backups — Clonezilla images |
-| VMs | None currently |
+| VMs | Kali Linux 2026.1, REMnux |
 
 ---
 
@@ -119,7 +119,9 @@ specific purpose and runs a deliberately chosen OS.
 |---|---|
 | Router | TP-Link Archer BE700 (WiFi 7) |
 | DNS | Quad9 (9.9.9.9) — malware blocking |
-| VPN Server | WireGuard server on TP-Link router |
+| VPN Server (router) | WireGuard built-in — UDP 51820 — S23 Ultra peered for home LAN access |
+| VPN Server (camel) | WireGuard on Linux host — UDP 443 — remote access tunnel |
+| DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, script-driven on camel — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
 | IoT Network | Dedicated VLAN with client isolation |
 
 ---
@@ -142,7 +144,8 @@ specific purpose and runs a deliberately chosen OS.
 - Proxmox VE 9.1 deployed on OptiPlex — hypervisor and backup server
 - Clonezilla full-system backup of ThinkPad NVMe (67GB compressed image on camel)
 - Hardware-agnostic Arch Linux USB built from scratch (Zen kernel, GRUB --removable)
+- WireGuard port migration (UDP 51820 → 443) on camel — resolved carrier-level blocking; DDNS migrated to eyeoftheneedle.dev via Cloudflare API with script on camel
 
 ---
 
-*Last updated: April 22nd, 2026*
+*Last updated: April 26th, 2026*
