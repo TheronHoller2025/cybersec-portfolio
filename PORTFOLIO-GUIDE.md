@@ -24,7 +24,7 @@ cybersec-portfolio/
 │   ├── arch-maintenance-script.md    ← Monthly Arch maintenance script
 │   ├── jellyfin-media-player-build.md ← Jellyfin Media Player AUR build
 │   ├── network-topology.svg          ← Network diagram
-│   ├── proxmox-homelab-server.md     ← Proxmox VE build on OptiPlex
+│   ├── deb-box.md                    ← Debian box build on OptiPlex (camel)
 │   ├── thinkpad-bios-update.md       ← BIOS update + automated version checker
 │   ├── arch-linux-usb-build.md       ← Hardware-agnostic Arch Linux USB build
 │   └── wireguard-ddns-setup.md       ← WireGuard port migration (443), Cloudflare DDNS on camel
@@ -89,4 +89,4 @@ Built and maintained by Theron Holler — targeting remote cybersecurity work
 
 ---
 
-*Last updated: April 26th, 2026*
+*Last updated: April 27th, 2026*

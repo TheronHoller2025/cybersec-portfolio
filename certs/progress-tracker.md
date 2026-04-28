@@ -35,7 +35,7 @@
 
 ### CompTIA Tech+
 - Currently studying
-- Exam target: Spring 2026
+- Exam target: May 16th, 2026
 - Focus: Hardware, networking fundamentals,
   operating systems, security basics
 
@@ -52,7 +52,6 @@
 
 ### CompTIA Security+
 - Target for SOC Tier 1 analyst roles
-- Required for SOC Tier 1 analyst roles
 
 ---
 

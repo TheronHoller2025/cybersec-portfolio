@@ -58,7 +58,7 @@ Conducted a two-day authorized penetration test against a friend's self-hosted J
 ### Home Network Hardening — TP-Link Archer BE700 (WiFi 7)
 Configured and hardened a WiFi 7 router from scratch:
 - WPA3/WPA2 unified SSID with MLO (Multi-Link Operation)
-- Quad9 DNS for malware blocking
+- Pi-hole for network-wide DNS filtering and malware blocking
 - Dedicated IoT VLAN with client isolation
 - WireGuard VPN server tested over mobile data
 - DMZ configuration to resolve double NAT with ISP gateway
@@ -80,7 +80,6 @@ Set up professional virtualization environment on EndeavourOS (Lenovo ThinkPad E
 - QEMU/KVM with libvirt configured
 - Kali Linux 2026.1 VM deployed
 - REMnux VM deployed (malware analysis sandbox)
-- Devuan VM deployed
 - Network bridge configuration via virbr0
 - Dedicated penetration testing environment isolated from host
 
@@ -99,14 +98,14 @@ Deployed REMnux Noble (Ubuntu 24.04-based) as a dedicated malware analysis sandb
 
 ---
 
-### Proxmox VE Homelab Server — Dell OptiPlex 3040
-Repurposed a Dell OptiPlex 3040 as a dedicated Proxmox VE hypervisor and backup server:
-- SSH key authentication (ed25519) configured for fully headless remote management
-- Wake-on-LAN configured across all three layers (NIC, NetworkManager, BIOS) — remote power-on confirmed
-- Proxmox VE 9.1 installed, no-subscription repos configured, system fully updated
-- 300GB LVM logical volume created and mounted at /backups for backup storage
+### Debian Homelab Box — Dell OptiPlex 3040 (camel)
+Wiped Proxmox after persistent display and stability issues and rebuilt camel as a clean Debian box:
+- SSH key authentication (ed25519) deployed from ThinkPad and tablet (Termux)
+- Wake-on-LAN configured and confirmed working across NIC, NetworkManager, and BIOS
+- WireGuard and DDNS restored — same UDP 443 config, same eyeoftheneedle.dev endpoint
+- Pi-hole deployed as network-wide DNS filter — Cloudflare upstream, custom blocklist, router DHCP updated
 
-**Full documentation:** [proxmox-homelab-server.md](homelab/proxmox-homelab-server.md)
+**Full documentation:** [deb-box.md](homelab/deb-box.md)
 
 ---
 
@@ -194,7 +193,7 @@ Built `jellyfin-media-player` version 1.12.0-6 from the AUR on the ProBook. Key 
 | Lenovo ThinkPad E16 Gen 2 | EndeavourOS + KDE Plasma 6 | Primary workstation, QEMU/KVM host |
 | HP ProBook 450 G7 | Arch Linux / Kali dual-boot | Secondary lab machine |
 | Dell Inspiron 5680 | CachyOS | Desktop workstation, 4-monitor setup |
-| Dell OptiPlex 3040 | Proxmox VE 9.1 | Hypervisor, backup server |
+| Dell OptiPlex 3040 | Debian | Debian box, backup target, Pi-hole host |
 | Dell Inspiron 3501 | Linux Mint 22.3 | General use, QEMU/KVM host |
 | Lenovo ThinkBook | Windows 11 Pro | Windows environment / VirtualBox |
 

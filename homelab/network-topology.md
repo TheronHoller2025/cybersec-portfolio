@@ -17,7 +17,7 @@ additions. A full SVG network diagram is included above.
 
 | Device | Role | Details |
 |---|---|---|
-| TP-Link Archer BE700 | Primary Router | WiFi 7, WPA3, Quad9 DNS, WireGuard VPN server |
+| TP-Link Archer BE700 | Primary Router | WiFi 7, WPA3, WireGuard VPN server |
 | ISP Gateway | ISP Modem | Double NAT resolved via DMZ |
 | virbr0 | Virtual Bridge | libvirt NAT bridge for QEMU/KVM VMs on Lenovo ThinkPad |
 
@@ -49,7 +49,7 @@ All primary workstations and laptops
 | Lenovo ThinkPad E16 Gen 2 | Main LAN | QEMU/KVM host, Mullvad app |
 | HP ProBook 450 G7 | Main LAN | Manual WireGuard via Mullvad keys over NetworkManager |
 | BigDell Inspiron 5680 | Main LAN | Desktop workstation |
-| OptiPlex 3040 | Main LAN | Proxmox VE hypervisor, backup server, WireGuard server — Kali Linux 2026.1 and REMnux VMs |
+| OptiPlex 3040 | Main LAN | Debian box, Pi-hole host, backup target, WireGuard server, hardening target |
 | Inspiron 3501 | Main LAN | General use |
 | ThinkBook 21KK | Main LAN | Windows environment, VirtualBox host |
 | Kali Linux 2026.1 VM | virbr0 (NAT) | QEMU/KVM on Lenovo ThinkPad |
@@ -81,8 +81,9 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 | Setting | Value |
 |---|---|
-| Upstream DNS | Quad9 (9.9.9.9) |
-| Malware blocking | Yes — via Quad9 |
+| LAN DNS | Pi-hole on camel — served via router DHCP |
+| Pi-hole upstream | Cloudflare |
+| Blocklists | Custom blocklist |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, updated by script on camel |
 
 ---
@@ -91,7 +92,6 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 | Addition | Status |
 |---|---|
-| Pi-hole | Planned — as Proxmox VM |
 | NAS/Storage server | Aspirational |
 | Dedicated IDS (Suricata) | Aspirational |
 | Dedicated firewall device | Aspirational |
@@ -99,4 +99,4 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 ---
 
-*Last updated: April 26th, 2026*
+*Last updated: April 27th, 2026*

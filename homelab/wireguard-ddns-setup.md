@@ -14,13 +14,13 @@ to a custom domain with a script-driven Cloudflare DDNS solution running
 on camel.
 
 The result is a remote access setup that reaches the full homelab —
-including the Proxmox web interface and both VMs — from anywhere on any
+including camel and the full home network — from anywhere on any
 network, with automatic DNS updates when the home IP changes.
 
 Related documentation:
 
 - Router build and original WireGuard server setup: [router-hardening-tp-link.md](router-hardening-tp-link.md)
-- Proxmox server (camel): [proxmox-homelab-server.md](proxmox-homelab-server.md)
+- Debian box (camel): [deb-box.md](deb-box.md)
 - Full network topology: [network-topology.md](network-topology.md)
 
 ---
@@ -41,7 +41,7 @@ The S23 Ultra uses it to manage the home network without the carrier's
 tethering app. That tunnel was not changed here.
 
 This document covers camel's WireGuard server — the production remote
-access tunnel used to reach Proxmox and the VMs from outside the network.
+access tunnel used to reach camel and the full home network from outside.
 
 ---
 
@@ -79,8 +79,8 @@ The SSH client config on the ThinkPad previously pointed to camel's LAN IP
 as the `HostName` for the `camel` host alias. That worked on the local
 network but failed remotely.
 
-The fix was to update `HostName` to `10.0.0.1` — camel's WireGuard peer
-IP. Since `ssh camel` now routes through the tunnel regardless of whether
+The fix was to update `HostName` to camel's WireGuard peer IP. Since
+`ssh camel` now routes through the tunnel regardless of whether
 the connection originates from the LAN or remotely, the same command works
 everywhere the tunnel is up. No manual switching between LAN and remote
 SSH configs.
@@ -173,11 +173,11 @@ the API call only when the IP actually rotates.
 ## References
 
 - Router build: [router-hardening-tp-link.md](router-hardening-tp-link.md)
-- Proxmox server build: [proxmox-homelab-server.md](proxmox-homelab-server.md)
+- Debian box build: [deb-box.md](deb-box.md)
 - Network topology: [network-topology.md](network-topology.md)
 - WireGuard documentation: https://www.wireguard.com/quickstart/
 - Cloudflare DNS API: https://developers.cloudflare.com/api/
 
 ---
 
-*Last updated: April 25th, 2026*
+*Last updated: April 27th, 2026*

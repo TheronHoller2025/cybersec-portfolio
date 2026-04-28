@@ -85,13 +85,11 @@ specific purpose and runs a deliberately chosen OS.
 ### Dell OptiPlex 3040
 | Field | Details |
 |---|---|
-| OS | Proxmox VE 9.1 |
+| OS | Debian (KDE Plasma) |
 | CPU | Intel i7-6700 |
 | RAM | 16GB |
-| Purpose | Hypervisor, backup server |
-| Access | Headless — web UI via local network, SSH from ThinkPad |
-| Backup Storage | 300GB LVM volume at /backups — Clonezilla images |
-| VMs | Kali Linux 2026.1, REMnux |
+| Purpose | Debian server, backup target, Pi-hole host, hardening target |
+| Access | Workstation (KDE Plasma) + SSH from ThinkPad + tablet |
 
 ---
 
@@ -118,7 +116,7 @@ specific purpose and runs a deliberately chosen OS.
 | Device | Details |
 |---|---|
 | Router | TP-Link Archer BE700 (WiFi 7) |
-| DNS | Quad9 (9.9.9.9) — malware blocking |
+| DNS | Pi-hole (camel) → Cloudflare upstream — network-wide ad/malware blocking |
 | VPN Server (router) | WireGuard built-in — UDP 51820 — S23 Ultra peered for home LAN access |
 | VPN Server (camel) | WireGuard on Linux host — UDP 443 — remote access tunnel |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, script-driven on camel — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
@@ -141,11 +139,14 @@ specific purpose and runs a deliberately chosen OS.
 - Oracle VirtualBox virtualization setup with Kali
 - TP-Link BE700 router hardened from scratch
 - Pi-hole capstone at local IT training program (Summer 2025)
-- Proxmox VE 9.1 deployed on OptiPlex — hypervisor and backup server
 - Clonezilla full-system backup of ThinkPad NVMe (67GB compressed image on camel)
 - Hardware-agnostic Arch Linux USB built from scratch (Zen kernel, GRUB --removable)
 - WireGuard port migration (UDP 51820 → 443) on camel — resolved carrier-level blocking; DDNS migrated to eyeoftheneedle.dev via Cloudflare API with script on camel
+- Proxmox VE abandoned April 2026 — enterprise hypervisor wrong tool for actual need; VMs moved to ThinkPad
+- camel (OptiPlex 3040) rebuilt as Debian box — SSH, WOL, WireGuard, DDNS, Pi-hole, backup target
+- Pi-hole deployed on camel — network-wide DNS ad/malware blocking, router DHCP updated
+- Tablet SSH configured (Termux on Samsung Galaxy S10 FE) — ed25519 keys, root and tman aliases via WireGuard
 
 ---
 
-*Last updated: April 26th, 2026*
+*Last updated: April 27th, 2026*

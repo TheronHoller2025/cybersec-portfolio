@@ -285,13 +285,13 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 | Lenovo ThinkPad E16 Gen 2 (Lenovo-EOS) | EndeavourOS (KDE) | Ryzen 7 7735HS, 64GB, QEMU/KVM, Kali 2026.1 VM + REMnux VM |
 | HP ProBook 450 G7 (archlaptop) | Arch Linux (KDE) / Kali Linux (KDE) — dual boot | i7-10510U, 32GB |
 | Dell Inspiron 5680 (BigDell) | CachyOS (KDE) | i7-8700, GTX 1060, 16GB, 4-monitor setup |
-| Dell OptiPlex 3040 | Proxmox VE 9.1 | i7-6700, 16GB |
+| Dell OptiPlex 3040 | Debian | i7-6700, 16GB, Pi-hole host, backup target |
 | Dell Inspiron 3501 | Linux Mint 22.3 (Cinnamon) | i5-1035G1, 8GB, QEMU/KVM, Devuan VM |
 | Lenovo ThinkBook | Windows 11 Pro | Ryzen 5 7430U, VirtualBox, Kali VM |
 
 ### Completed Projects
 - Local IT training program labs: Cisco Packet Tracer multi-subnet design, Windows Server 2016 (AD DS, DHCP, DNS, GPO, network shares), Pi-hole Raspberry Pi 4 capstone — documented in it-training.md
-- TP-Link Archer BE700 router hardened from scratch (WPA3, Quad9 DNS, WireGuard VPN, IoT VLAN)
+- TP-Link Archer BE700 router hardened from scratch (WPA3, WireGuard VPN, IoT VLAN) — DNS now via Pi-hole on camel
 - Lynis audit + full system hardening on Lenovo ThinkPad
 - Authorized pentest against Jellyfin server (formal report written)
 - QEMU/KVM setup with Kali 2026.1 VM and REMnux VM on EndeavourOS
@@ -299,6 +299,10 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 - Firejail + Chromium sandboxed Messenger web wrapper on archlaptop — .desktop file on KDE desktop
 - Custom monthly Arch maintenance script at /usr/local/bin/arch-maintenance on archlaptop — launched via desktop .desktop file
 - Jellyfin Media Player v1.12.0-6 built from AUR via yay on archlaptop (March 20, 2026)
+- WireGuard port migration (UDP 51820 → 443) on camel — resolved carrier-level blocking; DDNS migrated to eyeoftheneedle.dev via Cloudflare API with script on camel
+- camel (OptiPlex 3040) rebuilt as Debian box — SSH, WOL, WireGuard, DDNS, Pi-hole, backup target (April 2026)
+- Pi-hole deployed on camel — network-wide DNS filtering, Cloudflare upstream, custom blocklist, router DHCP updated
+- Tablet SSH configured (Termux on Samsung Galaxy S10 FE) — ed25519 keys, root and tman aliases via WireGuard
 
 ---
 

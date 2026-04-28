@@ -32,7 +32,7 @@
 <text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="226" letter-spacing="2">SECURITY LAYER</text>
 <rect x="210" y="220" width="360" height="38" rx="4" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ccff" x="390" y="235" text-anchor="middle" dominant-baseline="central">TP-LINK ARCHER BE700</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c7a" x="390" y="251" text-anchor="middle" dominant-baseline="central">WiFi 7 · WPA3 · Quad9 DNS · WireGuard VPN server</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c7a" x="390" y="251" text-anchor="middle" dominant-baseline="central">WiFi 7 · WPA3 · WireGuard VPN server</text>
 
 <!-- Mullvad VPN -->
 <rect x="20" y="278" width="740" height="38" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
@@ -62,7 +62,7 @@
 <!-- OptiPlex 3040 — no VMs -->
 <rect x="30" y="478" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="493" text-anchor="middle" dominant-baseline="central">OPTIPLEX 3040</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Proxmox VE 9.1 · 16GB</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian · 16GB</text>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <!-- MIDDLE SECTION — VM host groups                                -->
@@ -150,7 +150,7 @@
 
 <rect x="30" y="998" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="110" y="1013" text-anchor="middle" dominant-baseline="central">PI-HOLE</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="110" y="1029" text-anchor="middle" dominant-baseline="central">Proxmox VM</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#0d3a20" x="110" y="1029" text-anchor="middle" dominant-baseline="central">On camel</text>
 
 <rect x="204" y="998" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#1a5c3a" stroke-width="0.5" stroke-dasharray="5 3"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#1a7a45" x="284" y="1013" text-anchor="middle" dominant-baseline="central">NAS STORAGE</text>
