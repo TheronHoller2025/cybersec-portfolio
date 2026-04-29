@@ -103,7 +103,7 @@ Wiped Proxmox after persistent display and stability issues and rebuilt camel as
 - SSH key authentication (ed25519) deployed from ThinkPad and tablet (Termux)
 - Wake-on-LAN configured and confirmed working across NIC, NetworkManager, and BIOS
 - WireGuard and DDNS restored — same UDP 443 config, same eyeoftheneedle.dev endpoint
-- Pi-hole deployed as network-wide DNS filter — Cloudflare upstream, custom blocklist, router DHCP updated
+- Pi-hole deployed as network-wide DNS filter — Unbound recursive upstream with DNSSEC, custom blocklist, router DHCP updated
 
 **Full documentation:** [deb-box.md](homelab/deb-box.md)
 
@@ -116,7 +116,7 @@ Diagnosed carrier-level blocking of UDP 51820 and migrated camel's WireGuard ser
 - `eyeoftheneedle.dev` registered on Cloudflare (2 years, WHOIS privacy); `camel.eyeoftheneedle.dev` A record, DNS only
 - `/usr/local/bin/ddns-update.sh` on camel — Cloudflare API, scoped token, cron every 5 min
 - `wg-home` / `wg-away` aliases for endpoint switching; `ssh camel` routes via WireGuard IP
-- Router's built-in WireGuard (UDP 51820, S23 Ultra) kept separate — serves a different purpose
+- Router's built-in WireGuard (UDP 51820, S23 Ultra) kept separate — serves a different purpose; S23 Ultra also added as peer on camel's tunnel
 
 **Full documentation:** [wireguard-ddns-setup.md](homelab/wireguard-ddns-setup.md)
 

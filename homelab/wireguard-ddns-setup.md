@@ -33,7 +33,7 @@ different purposes.
 | Server | Host | Port | Purpose | Peers |
 |---|---|---|---|---|
 | Router built-in | TP-Link Archer BE700 | UDP 51820 | Home LAN management from phone | Samsung Galaxy S23 Ultra |
-| camel | Dell OptiPlex 3040 (Linux) | UDP 443 | Remote homelab access | ThinkPad, tablet |
+| camel | Dell OptiPlex 3040 (Linux) | UDP 443 | Remote homelab access | ThinkPad, tablet, S23 Ultra |
 
 The router's WireGuard server was set up during the original router
 hardening build — see [router-hardening-tp-link.md](router-hardening-tp-link.md).
@@ -156,7 +156,7 @@ the API call only when the IP actually rotates.
 | SSH alias | `ssh camel` routes via WireGuard IP — works anywhere tunnel is up |
 | wg-home / wg-away | Endpoint switching aliases in ~/.bashrc on ThinkPad |
 | Remote access | Confirmed from mobile data |
-| Router WireGuard (S23 Ultra) | Unchanged — UDP 51820, separate setup |
+| Router WireGuard (S23 Ultra) | Unchanged — UDP 51820, separate setup — S23 Ultra also peered on camel |
 
 ---
 
@@ -180,4 +180,4 @@ the API call only when the IP actually rotates.
 
 ---
 
-*Last updated: April 27th, 2026*
+*Last updated: April 28th, 2026*

@@ -1,6 +1,6 @@
 # Debian Homelab Box — Dell OptiPlex 3040 (camel)
 
-**Date:** April 27th, 2026
+**Date:** April 28th, 2026
 
 ---
 
@@ -84,6 +84,14 @@ backup — same config as documented in
 [wireguard-ddns-setup.md](wireguard-ddns-setup.md). Port 443 (UDP),
 eyeoftheneedle.dev via Cloudflare DDNS script, wg-home/wg-away aliases.
 
+WireGuard peers on camel's server:
+
+| Peer | Role |
+|---|---|
+| Lenovo ThinkPad E16 Gen 2 | Primary workstation |
+| Samsung Galaxy S10 FE | Tablet |
+| Samsung Galaxy S23 Ultra | Primary phone — added April 28th, 2026 |
+
 ---
 
 ## Phase 4 — Pi-hole
@@ -92,7 +100,7 @@ Pi-hole installed as the primary DNS resolver for the home network.
 
 | Setting | Value |
 |---|---|
-| Upstream DNS | Cloudflare |
+| Upstream DNS | Unbound (local recursive resolver — see below) |
 | Blocklists | Custom blocklist |
 | Domains blocked | 270k+ |
 | Router DHCP | Updated to push camel as DNS server to all LAN clients |
@@ -100,6 +108,26 @@ Pi-hole installed as the primary DNS resolver for the home network.
 All LAN devices now route DNS through Pi-hole without any manual
 per-device configuration. The router's DHCP server distributes
 camel as the DNS server.
+
+---
+
+## Phase 4a — Unbound Recursive DNS Resolver
+
+Unbound installed alongside Pi-hole as a local recursive DNS resolver.
+Pi-hole's upstream is now Unbound rather than Cloudflare.
+
+| Setting | Value |
+|---|---|
+| Unbound listen address | 127.0.0.1#5335 |
+| Pi-hole upstream | 127.0.0.1#5335 (Unbound) |
+| DNSSEC | Enabled and validated |
+
+DNS chain: LAN clients → Pi-hole (filtering) → Unbound (recursive
+resolver) → root servers directly.
+
+Unbound resolves queries by walking the DNS tree from the root servers
+down — no upstream resolver like Cloudflare or Google in the path.
+DNSSEC validation confirmed working end-to-end.
 
 ---
 
@@ -129,7 +157,8 @@ Both aliases confirmed working from the tablet over WireGuard.
 | WireGuard | UDP 443 — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
 | DDNS | camel.eyeoftheneedle.dev → home IP, cron every 5 min |
 | Backup | rsync target from ThinkPad via ~/backup.sh |
-| Pi-hole | Running — large blocklist, network-wide via router DHCP |
+| Pi-hole | Running — large blocklist, network-wide via router DHCP, Unbound upstream |
+| Unbound | Running — recursive resolver on 127.0.0.1#5335, DNSSEC validated |
 | Tablet SSH | Termux on Samsung Galaxy S10 FE — confirmed working |
 
 ---
@@ -139,10 +168,11 @@ Both aliases confirmed working from the tablet over WireGuard.
 - Debian 13 server install and post-install configuration
 - SSH key deployment and hardened auth
 - Wake-on-LAN across NIC, NetworkManager, and BIOS layers
-- Pi-hole DNS filtering with custom upstream and blocklists
+- Pi-hole DNS filtering with custom blocklists and Unbound recursive upstream
+- Unbound recursive DNS resolver with DNSSEC validation
 - Network-wide DNS via router DHCP
 - Cross-device SSH with Termux and ed25519 keys
 
 ---
 
-*Last updated: April 27th, 2026*
+*Last updated: April 28th, 2026*

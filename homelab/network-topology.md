@@ -70,7 +70,7 @@ All primary workstations and laptops
 | HP ProBook/Kali | Mullvad | Manual WireGuard config via NetworkManager |
 | All other machines | Mullvad | Available on all devices |
 | Router (BE700) | WireGuard server | Built-in — UDP 51820 — S23 Ultra peered for home LAN access |
-| camel (OptiPlex 3040) | WireGuard server | Linux host — UDP 443 — remote access tunnel, all peers |
+| camel (OptiPlex 3040) | WireGuard server | Linux host — UDP 443 — remote access tunnel — ThinkPad, tablet, S23 Ultra |
 
 These are two independent WireGuard servers serving different purposes.
 Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
@@ -82,7 +82,7 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 | Setting | Value |
 |---|---|
 | LAN DNS | Pi-hole on camel — served via router DHCP |
-| Pi-hole upstream | Cloudflare |
+| Pi-hole upstream | Unbound (local recursive resolver, DNSSEC enabled) |
 | Blocklists | Custom blocklist |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, updated by script on camel |
 
@@ -99,4 +99,4 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 ---
 
-*Last updated: April 27th, 2026*
+*Last updated: April 28th, 2026*
