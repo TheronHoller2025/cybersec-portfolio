@@ -91,4 +91,4 @@ order is followed.
 
 ---
 
-*Setup: Early 2026 — updated April 2026*
+*Last updated: April 28th, 2026*

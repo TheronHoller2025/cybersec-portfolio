@@ -9,7 +9,7 @@
 | Field | Details |
 |---|---|
 | Issued By | Google / Coursera |
-| Completed | April 28, 2025 |
+| Completed | April 28th, 2025 |
 | Courses | 5 courses completed |
 | Verify | https://coursera.org/verify/professional-cert/P5A9WKMT94V0 |
 | Certificate | [📄 View PDF](google-it-support-cert.pdf) |
@@ -76,4 +76,4 @@
 
 ---
 
-*Last updated: April 2026*
+*Last updated: April 28th, 2026*

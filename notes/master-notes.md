@@ -292,17 +292,19 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 ### Completed Projects
 - Local IT training program labs: Cisco Packet Tracer multi-subnet design, Windows Server 2016 (AD DS, DHCP, DNS, GPO, network shares), Pi-hole Raspberry Pi 4 capstone — documented in it-training.md
 - TP-Link Archer BE700 router hardened from scratch (WPA3, WireGuard VPN, IoT VLAN) — DNS now via Pi-hole on camel
-- Lynis audit + full system hardening on Lenovo ThinkPad
+- Lynis audit + full system hardening on HP ProBook 450 G7 (archlaptop)
 - Authorized pentest against Jellyfin server (formal report written)
 - QEMU/KVM setup with Kali 2026.1 VM and REMnux VM on EndeavourOS
 - AthenaOS VM decommissioned April 2026 after kernel update left it unbootable — replaced with REMnux
 - Firejail + Chromium sandboxed Messenger web wrapper on archlaptop — .desktop file on KDE desktop
 - Custom monthly Arch maintenance script at /usr/local/bin/arch-maintenance on archlaptop — launched via desktop .desktop file
-- Jellyfin Media Player v1.12.0-6 built from AUR via yay on archlaptop (March 20, 2026)
+- Jellyfin Media Player v1.12.0-6 built from AUR via yay on archlaptop (March 20th, 2026)
 - WireGuard port migration (UDP 51820 → 443) on camel — resolved carrier-level blocking; DDNS migrated to eyeoftheneedle.dev via Cloudflare API with script on camel
 - camel (OptiPlex 3040) rebuilt as Debian box — SSH, WOL, WireGuard, DDNS, Pi-hole, backup target (April 2026)
-- Pi-hole deployed on camel — network-wide DNS filtering, Cloudflare upstream, custom blocklist, router DHCP updated
+- Pi-hole deployed on camel — network-wide DNS filtering, Unbound upstream, DNSSEC, custom blocklist, router DHCP updated
+- Unbound deployed on camel as recursive DNS resolver (127.0.0.1#5335) — Pi-hole upstream now points to Unbound, DNSSEC validated (April 28th, 2026)
 - Tablet SSH configured (Termux on Samsung Galaxy S10 FE) — ed25519 keys, root and tman aliases via WireGuard
+- Samsung Galaxy S23 Ultra added as WireGuard peer on camel's tunnel (UDP 443) — April 28th, 2026
 
 ---
 
@@ -332,4 +334,4 @@ Start here before HackTheBox:
 
 ---
 
-*Last updated: April 2026 — ongoing*
+*Last updated: April 28th, 2026 — ongoing*

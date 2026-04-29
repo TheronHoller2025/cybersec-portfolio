@@ -25,7 +25,7 @@ than a typical AUR package.
 | OS | Arch Linux (KDE Plasma, Zen kernel) |
 | Package | jellyfin-media-player |
 | Version | 1.12.0-6 |
-| Built | March 20, 2026 |
+| Built | March 20th, 2026 |
 | AUR helper | yay |
 | Key dependency | qt5-webengine |
 
@@ -123,4 +123,4 @@ using the server's local address.
 
 ---
 
-*Built: March 20, 2026*
+*Built: March 20th, 2026*

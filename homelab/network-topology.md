@@ -17,7 +17,7 @@ additions. A full SVG network diagram is included above.
 
 | Device | Role | Details |
 |---|---|---|
-| TP-Link Archer BE700 | Primary Router | WiFi 7, WPA3, WireGuard VPN server |
+| TP-Link Archer BE700 | Primary Router | WiFi 7, WPA3 |
 | ISP Gateway | ISP Modem | Double NAT resolved via DMZ |
 | virbr0 | Virtual Bridge | libvirt NAT bridge for QEMU/KVM VMs on Lenovo ThinkPad |
 
@@ -69,10 +69,8 @@ All primary workstations and laptops
 | Lenovo ThinkPad E16 | Mullvad | Mullvad app |
 | HP ProBook/Kali | Mullvad | Manual WireGuard config via NetworkManager |
 | All other machines | Mullvad | Available on all devices |
-| Router (BE700) | WireGuard server | Built-in — UDP 51820 — S23 Ultra peered for home LAN access |
 | camel (OptiPlex 3040) | WireGuard server | Linux host — UDP 443 — remote access tunnel — ThinkPad, tablet, S23 Ultra |
 
-These are two independent WireGuard servers serving different purposes.
 Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 ---

@@ -32,7 +32,7 @@
 <text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="226" letter-spacing="2">SECURITY LAYER</text>
 <rect x="210" y="220" width="360" height="38" rx="4" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ccff" x="390" y="235" text-anchor="middle" dominant-baseline="central">TP-LINK ARCHER BE700</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c7a" x="390" y="251" text-anchor="middle" dominant-baseline="central">WiFi 7 · WPA3 · WireGuard VPN server</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a5c7a" x="390" y="251" text-anchor="middle" dominant-baseline="central">WiFi 7 · WPA3</text>
 
 <!-- Mullvad VPN -->
 <rect x="20" y="278" width="740" height="38" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>

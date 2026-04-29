@@ -40,10 +40,9 @@ the references section at the bottom.
 - Removed all default credentials immediately
 
 ### DNS Security
-- Replaced ISP default DNS with Quad9 (9.9.9.9)
-- Quad9 blocks known malware and phishing domains at the DNS level
-- Every device on the network gets this protection automatically
-  without any per-device configuration needed
+- Replaced ISP default DNS with Quad9 — blocks known malware and phishing domains at the DNS level
+- Every device on the network gets this protection automatically without any per-device configuration needed
+- DNS is now handled by Pi-hole on camel — the router's DHCP distributes camel as the DNS server network-wide; see [deb-box.md](deb-box.md)
 
 ### Network Segmentation
 - Created a dedicated IoT VLAN for smart devices
@@ -90,7 +89,7 @@ the references section at the bottom.
 ## Still On My To-Do List
 
 - DNS-over-TLS configuration
-- Pi-hole + Unbound integration — Pi-hole done on camel, see [deb-box.md](deb-box.md)
+- Pi-hole + Unbound integration — complete. Pi-hole and Unbound deployed on camel with DNSSEC — see [deb-box.md](deb-box.md)
 
 DDNS is complete — `eyeoftheneedle.dev` registered on Cloudflare, automated update script running on camel. Full documentation: [wireguard-ddns-setup.md](wireguard-ddns-setup.md)
 

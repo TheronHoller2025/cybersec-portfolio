@@ -25,23 +25,12 @@ Related documentation:
 
 ---
 
-## Background — Two WireGuard Servers
-
-The home network runs two independent WireGuard VPN servers serving
-different purposes.
-
-| Server | Host | Port | Purpose | Peers |
-|---|---|---|---|---|
-| Router built-in | TP-Link Archer BE700 | UDP 51820 | Home LAN management from phone | Samsung Galaxy S23 Ultra |
-| camel | Dell OptiPlex 3040 (Linux) | UDP 443 | Remote homelab access | ThinkPad, tablet, S23 Ultra |
-
-The router's WireGuard server was set up during the original router
-hardening build — see [router-hardening-tp-link.md](router-hardening-tp-link.md).
-The S23 Ultra uses it to manage the home network without the carrier's
-tethering app. That tunnel was not changed here.
+## Background
 
 This document covers camel's WireGuard server — the production remote
 access tunnel used to reach camel and the full home network from outside.
+Peers: Lenovo ThinkPad E16 Gen 2, Samsung Galaxy S10 FE (tablet), and
+Samsung Galaxy S23 Ultra.
 
 ---
 
@@ -66,10 +55,6 @@ issue immediately and confirmed the diagnosis.
 | camel WireGuard ListenPort | UDP 51820 | UDP 443 |
 | TP-Link port forward | UDP 51820 → camel | UDP 443 → camel |
 | Client endpoint | [LAN-IP]:51820 | camel.eyeoftheneedle.dev:443 |
-
-The router's own WireGuard server (port 51820, S23 Ultra only) was not
-touched — the S23 Ultra connects from Wi-Fi, not mobile data, so port
-51820 works fine there.
 
 ---
 
@@ -156,7 +141,6 @@ the API call only when the IP actually rotates.
 | SSH alias | `ssh camel` routes via WireGuard IP — works anywhere tunnel is up |
 | wg-home / wg-away | Endpoint switching aliases in ~/.bashrc on ThinkPad |
 | Remote access | Confirmed from mobile data |
-| Router WireGuard (S23 Ultra) | Unchanged — UDP 51820, separate setup — S23 Ultra also peered on camel |
 
 ---
 

@@ -116,8 +116,7 @@ specific purpose and runs a deliberately chosen OS.
 | Device | Details |
 |---|---|
 | Router | TP-Link Archer BE700 (WiFi 7) |
-| DNS | Pi-hole (camel) → Cloudflare upstream — network-wide ad/malware blocking |
-| VPN Server (router) | WireGuard built-in — UDP 51820 — S23 Ultra peered for home LAN access |
+| DNS | Pi-hole (camel) → Unbound upstream — network-wide ad/malware blocking, DNSSEC |
 | VPN Server (camel) | WireGuard on Linux host — UDP 443 — remote access tunnel |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, script-driven on camel — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
 | IoT Network | Dedicated VLAN with client isolation |
@@ -145,8 +144,10 @@ specific purpose and runs a deliberately chosen OS.
 - Proxmox VE abandoned April 2026 — enterprise hypervisor wrong tool for actual need; VMs moved to ThinkPad
 - camel (OptiPlex 3040) rebuilt as Debian box — SSH, WOL, WireGuard, DDNS, Pi-hole, backup target
 - Pi-hole deployed on camel — network-wide DNS ad/malware blocking, router DHCP updated
+- Unbound deployed on camel as recursive DNS resolver — Pi-hole upstream now points to Unbound, DNSSEC validated (April 28th, 2026)
 - Tablet SSH configured (Termux on Samsung Galaxy S10 FE) — ed25519 keys, root and tman aliases via WireGuard
+- Samsung Galaxy S23 Ultra added as WireGuard peer on camel's tunnel (UDP 443) — April 28th, 2026
 
 ---
 
-*Last updated: April 27th, 2026*
+*Last updated: April 28th, 2026*

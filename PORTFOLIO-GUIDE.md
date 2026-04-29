@@ -89,4 +89,4 @@ Built and maintained by Theron Holler — targeting remote cybersecurity work
 
 ---
 
-*Last updated: April 27th, 2026*
+*Last updated: April 28th, 2026*

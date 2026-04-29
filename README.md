@@ -15,6 +15,7 @@ My long-term goal is remote cybersecurity work — specifically SOC analyst and 
 - [Study Notes](notes/)
 - [Malware Analysis](malware-analysis/)
 - [Portfolio Guide](PORTFOLIO-GUIDE.md)
+
 ---
 
 ## Certifications & Education
@@ -83,6 +84,8 @@ Set up professional virtualization environment on EndeavourOS (Lenovo ThinkPad E
 - Network bridge configuration via virbr0
 - Dedicated penetration testing environment isolated from host
 
+**Full documentation:** [qemu-kvm-kali-setup.md](homelab/qemu-kvm-kali-setup.md)
+
 ---
 
 ### REMnux Malware Analysis VM — QEMU/KVM
@@ -116,7 +119,6 @@ Diagnosed carrier-level blocking of UDP 51820 and migrated camel's WireGuard ser
 - `eyeoftheneedle.dev` registered on Cloudflare (2 years, WHOIS privacy); `camel.eyeoftheneedle.dev` A record, DNS only
 - `/usr/local/bin/ddns-update.sh` on camel — Cloudflare API, scoped token, cron every 5 min
 - `wg-home` / `wg-away` aliases for endpoint switching; `ssh camel` routes via WireGuard IP
-- Router's built-in WireGuard (UDP 51820, S23 Ultra) kept separate — serves a different purpose; S23 Ultra also added as peer on camel's tunnel
 
 **Full documentation:** [wireguard-ddns-setup.md](homelab/wireguard-ddns-setup.md)
 

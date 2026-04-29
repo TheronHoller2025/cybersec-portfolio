@@ -1,7 +1,7 @@
 # REMnux VM Setup on QEMU/KVM (EndeavourOS)
 
 **Author:** Theron Holler  
-**Date:** April 5, 2026  
+**Date:** April 5th, 2026  
 **Host Machine:** Lenovo ThinkPad E16 Gen 2 — EndeavourOS (systemd), KDE Plasma/Wayland, Ryzen 7 7735HS, 64GB RAM  
 **Hypervisor:** QEMU/KVM with virt-manager  
 **Guest:** REMnux Noble (Ubuntu 24.04-based malware analysis distro)
@@ -16,11 +16,11 @@ REMnux replaced an AthenaOS VM that was decommissioned on the same date after a 
 
 ---
 
-## AthenaOS Decommission — April 5, 2026
+## AthenaOS Decommission — April 5th, 2026
 
 ### Background
 
-AthenaOS was a security-focused Arch-based Linux distribution running as a VM in QEMU/KVM on the Lenovo ThinkPad. It was used for general security tooling and exploration. On April 5, 2026, a routine system update via `pacman` broke the VM's ability to boot, ultimately leading to the decision to decommission it and replace it with REMnux.
+AthenaOS was a security-focused Arch-based Linux distribution running as a VM in QEMU/KVM on the Lenovo ThinkPad. It was used for general security tooling and exploration. On April 5th, 2026, a routine system update via `pacman` broke the VM's ability to boot, ultimately leading to the decision to decommission it and replace it with REMnux.
 
 ---
 
@@ -661,7 +661,7 @@ During the installation, the following tools were observed being configured (par
 
 ---
 
-## Post-Setup Incident: Display Scaling Regression — April 12, 2026
+## Post-Setup Incident: Display Scaling Regression — April 12th, 2026
 
 ### Background
 
@@ -742,7 +742,7 @@ The deeper lesson: display scaling in QEMU/KVM+SPICE is not just about `spice-vd
 
 ---
 
-## Post-Setup Incident: Display Still Stuck at 640x480 After Wayland Fix — April 12, 2026
+## Post-Setup Incident: Display Still Stuck at 640x480 After Wayland Fix — April 12th, 2026
 
 ### Background
 
