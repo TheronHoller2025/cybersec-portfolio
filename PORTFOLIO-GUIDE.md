@@ -22,7 +22,6 @@ cybersec-portfolio/
 │   ├── router-hardening-tp-link.md   ← BE700 router build
 │   ├── chromium-messenger-firejail.md ← Sandboxed Messenger web wrapper
 │   ├── arch-maintenance-script.md    ← Monthly Arch maintenance script
-│   ├── jellyfin-media-player-build.md ← Jellyfin Media Player AUR build
 │   ├── network-topology.svg          ← Network diagram
 │   ├── deb-box.md                    ← Debian box build on OptiPlex (camel)
 │   ├── thinkpad-bios-update.md       ← BIOS update + automated version checker

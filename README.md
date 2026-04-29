@@ -180,12 +180,6 @@ Custom bash script at `/usr/local/bin/arch-maintenance` covering full monthly sy
 
 ---
 
-### Jellyfin Media Player — AUR Build
-**Tools:** yay  
-Built `jellyfin-media-player` version 1.12.0-6 from the AUR on the ProBook. Key dependency `qt5-webengine` (embedded Chromium engine) extended the compile time significantly. Installed March 20, 2026.
-
-**Full documentation:** [jellyfin-media-player-build.md](homelab/jellyfin-media-player-build.md)
-
 ---
 
 ## Machine Fleet

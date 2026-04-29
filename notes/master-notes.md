@@ -298,7 +298,6 @@ Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities
 - AthenaOS VM decommissioned April 2026 after kernel update left it unbootable — replaced with REMnux
 - Firejail + Chromium sandboxed Messenger web wrapper on archlaptop — .desktop file on KDE desktop
 - Custom monthly Arch maintenance script at /usr/local/bin/arch-maintenance on archlaptop — launched via desktop .desktop file
-- Jellyfin Media Player v1.12.0-6 built from AUR via yay on archlaptop (March 20th, 2026)
 - WireGuard port migration (UDP 51820 → 443) on camel — resolved carrier-level blocking; DDNS migrated to eyeoftheneedle.dev via Cloudflare API with script on camel
 - camel (OptiPlex 3040) rebuilt as Debian box — SSH, WOL, WireGuard, DDNS, Pi-hole, backup target (April 2026)
 - Pi-hole deployed on camel — network-wide DNS filtering, Unbound upstream, DNSSEC, custom blocklist, router DHCP updated
