@@ -69,7 +69,7 @@
 
 - Local IT Training Program
 - Local Community College
-- TryHackMe — SOC Level 1 path (in progress)
+- TryHackMe — SOC Level 1 path (planned)
 - HackTheBox — planned after TryHackMe
 - Professor Messer (CompTIA study materials)
 - Mr. Robot — surprisingly accurate cybersecurity reference 😄

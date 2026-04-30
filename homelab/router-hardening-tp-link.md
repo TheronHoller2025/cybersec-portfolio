@@ -40,8 +40,7 @@ the references section at the bottom.
 - Removed all default credentials immediately
 
 ### DNS Security
-- Replaced ISP default DNS with Quad9 — blocks known malware and phishing domains at the DNS level
-- Every device on the network gets this protection automatically without any per-device configuration needed
+- Initially replaced ISP default DNS with Quad9 for network-wide malware and phishing blocking
 - DNS is now handled by Pi-hole on camel — the router's DHCP distributes camel as the DNS server network-wide; see [deb-box.md](deb-box.md)
 
 ### Network Segmentation
@@ -57,6 +56,7 @@ the references section at the bottom.
   the network — it worked
 - This was one of the more challenging parts of the whole build
   and required the most research
+- Later migrated off the router to camel — see [deb-box.md](deb-box.md)
 
 ### NAT and DMZ
 - Having both the ISP gateway and the TP-Link router created
@@ -105,4 +105,4 @@ DDNS is complete — `eyeoftheneedle.dev` registered on Cloudflare, automated up
 
 ---
 
-*Build completed: Early 2026*
+*Last updated: April 30th, 2026*

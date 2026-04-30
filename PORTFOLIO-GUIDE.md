@@ -20,7 +20,6 @@ cybersec-portfolio/
 │   ├── qemu-kvm-kali-setup.md        ← QEMU/KVM setup documentation
 │   ├── remnux-kvm-setup.md           ← REMnux VM setup + AthenaOS decommission
 │   ├── router-hardening-tp-link.md   ← BE700 router build
-│   ├── chromium-messenger-firejail.md ← Sandboxed Messenger web wrapper
 │   ├── arch-maintenance-script.md    ← Monthly Arch maintenance script
 │   ├── network-topology.svg          ← Network diagram
 │   ├── deb-box.md                    ← Debian box build on OptiPlex (camel)

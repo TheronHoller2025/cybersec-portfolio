@@ -92,6 +92,10 @@ WireGuard peers on camel's server:
 | Samsung Galaxy S10 FE | Tablet |
 | Samsung Galaxy S23 Ultra | Primary phone — added April 28th, 2026 |
 
+Connectivity tested from three different WiFi networks on April 30th, 2026 —
+WireGuard re-established the tunnel automatically each time and SSH to camel
+over the VPN IP worked immediately on every network change.
+
 ---
 
 ## Phase 4 — Pi-hole
@@ -102,7 +106,7 @@ Pi-hole installed as the primary DNS resolver for the home network.
 |---|---|
 | Upstream DNS | Unbound (local recursive resolver — see below) |
 | Blocklists | Custom blocklist |
-| Domains blocked | 270k+ |
+| Admin dashboard | Web interface with real-time query logs and block statistics |
 | Router DHCP | Updated to push camel as DNS server to all LAN clients |
 
 All LAN devices now route DNS through Pi-hole without any manual

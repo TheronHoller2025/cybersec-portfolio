@@ -165,14 +165,6 @@ Built complete SVG network topology diagram documenting full home lab machine fl
 
 ---
 
-### Sandboxed Web App — Firejail + Chromium (Facebook Messenger)
-**Tools:** Firejail, Chromium  
-Wrapped Facebook Messenger as a sandboxed desktop application on the ProBook using Firejail and Chromium's app mode. A `.desktop` file on the KDE desktop launches Messenger in an isolated Firejail process — no browser chrome, no tab bar, process-level sandboxing via Linux namespaces and seccomp-bpf.
-
-**Full documentation:** [chromium-messenger-firejail.md](homelab/chromium-messenger-firejail.md)
-
----
-
 ### Arch Linux Monthly Maintenance Script — HP ProBook
 Custom bash script at `/usr/local/bin/arch-maintenance` covering full monthly system upkeep on the ProBook: official and AUR package updates, orphaned package removal, package cache cleanup, and journal log vacuuming. Launched from an **Arch Maintenance** `.desktop` file on the KDE desktop.
 
