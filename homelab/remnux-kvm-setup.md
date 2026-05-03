@@ -857,4 +857,4 @@ The change is permanent. `/etc/default/grub` is a config file that persists acro
 
 ---
 
-*Part of the cybersecurity homelab portfolio at [github.com/TheronHoller2025/cybersec-portfolio](https://github.com/TheronHoller2025/cybersec-portfolio)*
+*Part of the cybersecurity homelab portfolio at [github.com/TheronHoller2025/cybersecurity-homelab](https://github.com/TheronHoller2025/cybersecurity-homelab)*

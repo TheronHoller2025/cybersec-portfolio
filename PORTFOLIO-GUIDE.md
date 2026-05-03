@@ -4,7 +4,7 @@
 ---
 
 ## Repository Structure
-cybersec-portfolio/
+cybersecurity-homelab/
 │
 ├── README.md                          ← Main profile page
 ├── PORTFOLIO-GUIDE.md                 ← This file
