@@ -37,7 +37,7 @@
 <!-- Mullvad VPN -->
 <rect x="20" y="278" width="740" height="38" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
 <text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ff88" x="390" y="293" text-anchor="middle" dominant-baseline="central">MULLVAD VPN</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="390" y="309" text-anchor="middle" dominant-baseline="central">Available on all machines and devices — WireGuard protocol</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="390" y="309" text-anchor="middle" dominant-baseline="central">Exit node on camel — ThinkPad full tunnel — ProBook/Kali direct — WireGuard</text>
 
 <line x1="390" y1="316" x2="390" y2="336" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
 
@@ -61,13 +61,18 @@
 
 <!-- OptiPlex 3040 -->
 <rect x="30" y="478" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="493" text-anchor="middle" dominant-baseline="central">OPTIPLEX 3040</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian · 16GB</text>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="493" text-anchor="middle" dominant-baseline="central">OPTIPLEX 3040 — CAMEL</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian · WireGuard server · Mullvad exit</text>
 
 <!-- Pi-hole service card -->
 <rect x="30" y="532" width="190" height="36" rx="4" fill="#1a0808" stroke="#cc3333" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#cc3333" x="125" y="544" text-anchor="middle" dominant-baseline="central">PI-HOLE</text>
 <text font-family="'Courier New',monospace" font-size="8" fill="#7a2020" x="125" y="560" text-anchor="middle" dominant-baseline="central">DNS · Unbound upstream · DNSSEC</text>
+
+<!-- WireGuard + Mullvad service card -->
+<rect x="30" y="578" width="190" height="36" rx="4" fill="#0a1020" stroke="#4488cc" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#4488cc" x="125" y="590" text-anchor="middle" dominant-baseline="central">WIREGUARD + MULLVAD EXIT</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#2a4a7a" x="125" y="606" text-anchor="middle" dominant-baseline="central">Full tunnel · nftables · DNS leak-free</text>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <!-- MIDDLE SECTION — VM host groups                                -->
@@ -80,7 +85,7 @@
 <!-- Lenovo ThinkPad host card -->
 <rect x="244" y="376" width="198" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="343" y="391" text-anchor="middle" dominant-baseline="central">LENOVO THINKPAD E16 GEN 2</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="343" y="407" text-anchor="middle" dominant-baseline="central">EndeavourOS · 64GB</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="343" y="407" text-anchor="middle" dominant-baseline="central">EndeavourOS · 64GB · full tunnel</text>
 
 <!-- Lenovo ThinkPad VM: Kali 2026.1 -->
 <rect x="256" y="432" width="174" height="36" rx="4" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
