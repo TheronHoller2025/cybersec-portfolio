@@ -62,7 +62,7 @@
 <!-- OptiPlex 3040 -->
 <rect x="30" y="478" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="493" text-anchor="middle" dominant-baseline="central">OPTIPLEX 3040 — CAMEL</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian · WireGuard server · Mullvad exit</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian · WireGuard · Mullvad exit</text>
 
 <!-- Pi-hole service card -->
 <rect x="30" y="532" width="190" height="36" rx="4" fill="#1a0808" stroke="#cc3333" stroke-width="0.5"/>
