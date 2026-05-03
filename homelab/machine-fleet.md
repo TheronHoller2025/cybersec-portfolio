@@ -82,14 +82,14 @@ specific purpose and runs a deliberately chosen OS.
 
 ## Lab Servers
 
-### Dell OptiPlex 3040
+### Dell OptiPlex 3040 — camel
 | Field | Details |
 |---|---|
-| OS | Debian (KDE Plasma) |
+| OS | Debian 13 Trixie (KDE Plasma) |
 | CPU | Intel i7-6700 |
 | RAM | 16GB |
-| Purpose | Debian server, backup target, Pi-hole host, hardening target |
-| Access | Workstation (KDE Plasma) + SSH from ThinkPad + tablet |
+| Purpose | Always-on server — WireGuard, Pi-hole/Unbound DNS, Mullvad exit node, nftables firewall, monitoring, backup target, hardening target |
+| Access | SSH via WireGuard tunnel — ThinkPad, tablet, S23 Ultra |
 
 ---
 
@@ -117,7 +117,7 @@ specific purpose and runs a deliberately chosen OS.
 |---|---|
 | Router | TP-Link Archer BE700 (WiFi 7) |
 | DNS | Pi-hole (camel) → Unbound upstream — network-wide ad/malware blocking, DNSSEC |
-| VPN Server (camel) | WireGuard on Linux host — UDP 443 — remote access tunnel |
+| VPN Server (camel) | WireGuard — remote access tunnel + Mullvad exit node for all connected clients |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, script-driven on camel — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
 | IoT Network | Dedicated VLAN with client isolation |
 
@@ -146,8 +146,16 @@ specific purpose and runs a deliberately chosen OS.
 - Pi-hole deployed on camel — network-wide DNS ad/malware blocking, router DHCP updated
 - Unbound deployed on camel as recursive DNS resolver — Pi-hole upstream now points to Unbound, DNSSEC validated (April 28th, 2026)
 - Tablet SSH configured (Termux on Samsung Galaxy S10 FE) — ed25519 keys, root and tman aliases via WireGuard
-- Samsung Galaxy S23 Ultra added as WireGuard peer on camel's tunnel (UDP 443) — April 28th, 2026
+- Samsung Galaxy S23 Ultra added as WireGuard peer on camel's tunnel — April 28th, 2026
+- Pi-hole HTTPS — Let's Encrypt certificate issued via Cloudflare DNS challenge, admin interface accessible at pihole.eyeoftheneedle.dev
+- SSH hardening on camel — password auth disabled, root login disabled, port 22 removed
+- Service reduction on camel — disabled unnecessary services, only required services remain
+- nftables hardening on camel — default-drop policy, SSH accessible only via WireGuard tunnel, ICMP scoped to monitoring service IPs
+- Full-tunnel WireGuard on ThinkPad — all traffic routes through camel, automatic endpoint switching via NetworkManager dispatcher
+- Mullvad exit node on camel — WireGuard client traffic policy-routed through Mullvad tunnel; DNS leak prevention via Unbound UID routing
+- Automated monitoring — camel-monitor.sh checks all critical services every five minutes, email alerts on state change; external uptime monitoring integrated
+- unattended-upgrades configured on camel — security patches applied automatically
 
 ---
 
-*Last updated: April 28th, 2026*
+*Last updated: May 3rd, 2026*

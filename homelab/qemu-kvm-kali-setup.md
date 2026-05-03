@@ -30,8 +30,8 @@ troubleshooting time.
 
 | VM | Purpose | Status |
 |---|---|---|
-| Kali Linux 2026.1 | Primary penetration testing platform | Active |
-| REMnux | Malware analysis sandbox | Active |
+| Kali Linux 2026.1 | Primary penetration testing platform | Images refreshed April 2026 — setup in progress |
+| REMnux Noble (Ubuntu 24.04) | Malware analysis sandbox | Images refreshed April 2026 — setup in progress |
 
 ---
 
@@ -91,4 +91,4 @@ order is followed.
 
 ---
 
-*Last updated: April 28th, 2026*
+*Last updated: May 3rd, 2026*

@@ -105,8 +105,13 @@ Deployed REMnux Noble (Ubuntu 24.04-based) as a dedicated malware analysis sandb
 Wiped Proxmox after persistent display and stability issues and rebuilt camel as a clean Debian box:
 - SSH key authentication (ed25519) deployed from ThinkPad and tablet (Termux)
 - Wake-on-LAN configured and confirmed working across NIC, NetworkManager, and BIOS
-- WireGuard and DDNS restored — same UDP 443 config, same eyeoftheneedle.dev endpoint
+- WireGuard and DDNS restored — same config, same eyeoftheneedle.dev endpoint
 - Pi-hole deployed as network-wide DNS filter — Unbound recursive upstream with DNSSEC, custom blocklist, router DHCP updated
+- Pi-hole HTTPS configured — valid Let's Encrypt certificate via Cloudflare DNS challenge
+- SSH hardened — key-only auth, password auth disabled, port 22 removed
+- nftables firewall — default-drop policy, SSH accessible only via WireGuard tunnel
+- Mullvad exit node — all WireGuard client traffic policy-routed through Mullvad; DNS leak prevention via Unbound UID routing
+- Automated monitoring — camel-monitor.sh checks all critical services every five minutes, email alerts on state change
 
 **Full documentation:** [deb-box.md](homelab/deb-box.md)
 
@@ -172,8 +177,6 @@ Custom bash script at `/usr/local/bin/arch-maintenance` covering full monthly sy
 
 ---
 
----
-
 ## Machine Fleet
 
 | Machine | OS | Purpose |
@@ -181,7 +184,7 @@ Custom bash script at `/usr/local/bin/arch-maintenance` covering full monthly sy
 | Lenovo ThinkPad E16 Gen 2 | EndeavourOS + KDE Plasma 6 | Primary workstation, QEMU/KVM host |
 | HP ProBook 450 G7 | Arch Linux / Kali dual-boot | Secondary lab machine |
 | Dell Inspiron 5680 | CachyOS | Desktop workstation, 4-monitor setup |
-| Dell OptiPlex 3040 | Debian | Debian box, backup target, Pi-hole host |
+| Dell OptiPlex 3040 | Debian | Server — WireGuard, Pi-hole/Unbound, Mullvad exit, nftables |
 | Dell Inspiron 3501 | Linux Mint 22.3 | General use, QEMU/KVM host |
 | Lenovo ThinkBook | Windows 11 Pro | Windows environment / VirtualBox |
 
@@ -189,9 +192,9 @@ Custom bash script at `/usr/local/bin/arch-maintenance` covering full monthly sy
 
 ## Currently Learning
 
-- CompTIA Tech+ exam preparation
+- CompTIA Tech+ (exam May 16th, 2026)
+- CompTIA A+ (classes starting May 5th, 2026)
 - Malware analysis and sandbox techniques
-- Network+ exam preparation
 
 ---
 

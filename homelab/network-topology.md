@@ -46,30 +46,31 @@ All primary workstations and laptops
 
 | Machine | Segment | Notes |
 |---|---|---|
-| Lenovo ThinkPad E16 Gen 2 | Main LAN | QEMU/KVM host, Mullvad app |
-| HP ProBook 450 G7 | Main LAN | Manual WireGuard via Mullvad keys over NetworkManager |
+| Lenovo ThinkPad E16 Gen 2 | Main LAN | Primary workstation, QEMU/KVM host |
+| HP ProBook 450 G7 | Main LAN | Secondary lab, attack platform |
 | BigDell Inspiron 5680 | Main LAN | Desktop workstation |
-| OptiPlex 3040 | Main LAN | Debian box, Pi-hole host, backup target, WireGuard server, hardening target |
+| OptiPlex 3040 "camel" | Main LAN | Always-on server — WireGuard, DNS, Mullvad exit |
 | Inspiron 3501 | Main LAN | General use |
-| ThinkBook 21KK | Main LAN | Windows environment, VirtualBox host |
-| Kali Linux 2026.1 VM | virbr0 (NAT) | QEMU/KVM on Lenovo ThinkPad |
-| REMnux VM | virbr0 (NAT) | QEMU/KVM on Lenovo ThinkPad |
-| Kali Linux VM | Local (VirtualBox) | VirtualBox on ThinkBook |
-| Devuan VM | virbr0 (NAT) | QEMU/KVM on Inspiron 3501 |
+| ThinkBook 21KK | Main LAN | Windows environment |
+| Kali Linux 2026.1 VM | virbr0 (NAT) | Penetration testing |
+| REMnux VM | virbr0 (NAT) | Malware analysis |
+| Kali Linux VM | Local (VirtualBox) | Penetration testing |
+| Devuan VM | virbr0 (NAT) | General use |
 | Galaxy S23 Ultra | WiFi | Primary phone |
 | Galaxy S10 FE | WiFi | Tablet |
-| LG NanoCell 55" | IoT VLAN | Smart TV · Cat6 to router · client isolated |
+| LG NanoCell 55" | IoT VLAN | Smart TV |
 
 ---
 
 ## VPN Configuration
 
-| Machine | VPN | Method |
+| Machine | VPN | Notes |
 |---|---|---|
-| Lenovo ThinkPad E16 | Mullvad | Mullvad app |
+| Lenovo ThinkPad E16 | Full tunnel → camel → Mullvad | All traffic exits through Mullvad via camel |
 | HP ProBook/Kali | Mullvad | Manual WireGuard config via NetworkManager |
-| All other machines | Mullvad | Available on all devices |
-| camel (OptiPlex 3040) | WireGuard server | Linux host — UDP 443 — remote access tunnel — ThinkPad, tablet, S23 Ultra |
+| Galaxy S23 Ultra | WireGuard peer | Remote access to homelab |
+| Galaxy S10 FE | WireGuard peer | Remote access to homelab |
+| camel (OptiPlex 3040) | WireGuard server + Mullvad exit node | Peers: ThinkPad, tablet, S23 Ultra — client traffic exits through Mullvad |
 
 Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
@@ -81,6 +82,8 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 |---|---|
 | LAN DNS | Pi-hole on camel — served via router DHCP |
 | Pi-hole upstream | Unbound (local recursive resolver, DNSSEC enabled) |
+| Pi-hole admin | HTTPS at pihole.eyeoftheneedle.dev — valid Let's Encrypt certificate |
+| DNS leak prevention | Unbound queries routed through Mullvad via UID routing |
 | Blocklists | Custom blocklist |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, updated by script on camel |
 
@@ -97,4 +100,4 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 ---
 
-*Last updated: April 28th, 2026*
+*Last updated: May 3rd, 2026*

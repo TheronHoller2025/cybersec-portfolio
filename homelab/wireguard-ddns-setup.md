@@ -44,17 +44,17 @@ is silently dropped.
 
 ---
 
-## Fix — Port Migration to UDP 443
+## Fix — Port Migration
 
-UDP 443 is the QUIC/HTTP3 port. Mobile carriers treat it as routine web
-traffic and do not block it. Migrating WireGuard to UDP 443 resolved the
-issue immediately and confirmed the diagnosis.
+WireGuard was migrated to a port that mobile carriers associate with
+routine encrypted web traffic and do not block. This resolved the issue
+immediately and confirmed the diagnosis.
 
-| Component | Before | After |
-|---|---|---|
-| camel WireGuard ListenPort | UDP 51820 | UDP 443 |
-| TP-Link port forward | UDP 51820 → camel | UDP 443 → camel |
-| Client endpoint | [LAN-IP]:51820 | camel.eyeoftheneedle.dev:443 |
+| Component | Change |
+|---|---|
+| camel WireGuard ListenPort | Migrated from UDP 51820 |
+| TP-Link port forward | Updated to match |
+| Client endpoint | camel.eyeoftheneedle.dev (resolved at connection time) |
 
 ---
 
@@ -72,21 +72,26 @@ SSH configs.
 
 ---
 
-## Shell Aliases — Endpoint Switching
+## Endpoint Switching — Automatic via NetworkManager
 
-The BE700 does not support hairpin NAT on port 443 — connecting to the
-public-facing endpoint from inside the LAN would loop through the router
-and break. Two bash aliases in `~/.bashrc` on the ThinkPad handle this.
+The BE700 does not support hairpin NAT — connecting to the
+public-facing endpoint from inside the LAN loops through the router
+and breaks. The solution is switching the WireGuard endpoint between
+the LAN address (when home) and the DDNS hostname (when remote).
 
-`wg-home` tears down any active WireGuard tunnel and reconnects using
-camel's LAN IP as the endpoint. This is used when on the home network —
-it routes tunnel traffic directly on the local segment rather than out
-through the internet and back in.
+This was originally handled by manual bash aliases. It is now handled
+automatically by a NetworkManager dispatcher script on the ThinkPad.
+On any network change, the dispatcher runs and determines the correct
+endpoint:
 
-`wg-away` tears down and reconnects using `camel.eyeoftheneedle.dev:443`
-as the endpoint. This is used over mobile data or any external network.
-The hostname resolves at connection time, so it always picks up the
-current DNS record.
+| Scenario | Endpoint Used |
+|---|---|
+| Home network detected | camel's LAN address — direct tunnel on local segment |
+| Any other network | camel.eyeoftheneedle.dev — resolved fresh at connection time |
+
+The hostname always picks up the current DDNS record, so the tunnel
+reconnects correctly regardless of whether the home IP has changed.
+No manual commands needed on network switches.
 
 ---
 
@@ -133,14 +138,14 @@ the API call only when the IP actually rotates.
 
 | Item | Status |
 |---|---|
-| WireGuard port | UDP 443 |
-| Port forward (BE700) | UDP 443 → camel |
+| WireGuard port | Migrated from UDP 51820 — carrier blocking resolved |
+| Port forward (BE700) | Updated to match |
 | DDNS domain | eyeoftheneedle.dev (Cloudflare, 2-year registration) |
 | DNS record | camel.eyeoftheneedle.dev → home IP (A, DNS only) |
 | DDNS update | /usr/local/bin/ddns-update.sh — cron every 5 min on camel |
-| SSH alias | `ssh camel` routes via WireGuard IP — works anywhere tunnel is up |
-| wg-home / wg-away | Endpoint switching aliases in ~/.bashrc on ThinkPad |
-| Remote access | Confirmed from mobile data |
+| SSH | `ssh camel` routes via WireGuard IP — works anywhere tunnel is up |
+| Endpoint switching | NetworkManager dispatcher — automatic at connection time |
+| Remote access | Confirmed from mobile data and multiple external networks |
 
 ---
 
@@ -164,4 +169,4 @@ the API call only when the IP actually rotates.
 
 ---
 
-*Last updated: April 28th, 2026*
+*Last updated: May 3rd, 2026*
