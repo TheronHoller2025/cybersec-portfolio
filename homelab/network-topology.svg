@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 780 1280" style="background:#0a0f0a;border-radius:8px">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 780 1344" style="background:#0a0f0a;border-radius:8px">
 <defs>
 <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
 <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -37,7 +37,7 @@
 <!-- Mullvad VPN -->
 <rect x="20" y="278" width="740" height="38" rx="4" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
 <text font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#00ff88" x="390" y="293" text-anchor="middle" dominant-baseline="central">MULLVAD VPN</text>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="390" y="309" text-anchor="middle" dominant-baseline="central">Exit node on camel — ThinkPad full tunnel — ProBook/Kali direct — WireGuard</text>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="390" y="309" text-anchor="middle" dominant-baseline="central">Exit node on camel — 9-machine full-tunnel fleet mesh — all traffic via Mullvad</text>
 
 <line x1="390" y1="316" x2="390" y2="336" stroke="#00ff88" stroke-width="0.5" marker-end="url(#arrow)"/>
 
@@ -62,12 +62,12 @@
 <!-- OptiPlex 3040 -->
 <rect x="30" y="478" width="190" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="125" y="493" text-anchor="middle" dominant-baseline="central">OPTIPLEX 3040 — CAMEL</text>
-<text font-family="'Courier New',monospace" font-size="8" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian · WireGuard · Mullvad exit</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#1a7a45" x="125" y="509" text-anchor="middle" dominant-baseline="central">Debian · WireGuard mesh · Mullvad exit · DoT</text>
 
 <!-- Pi-hole service card -->
 <rect x="30" y="532" width="190" height="36" rx="4" fill="#1a0808" stroke="#cc3333" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#cc3333" x="125" y="544" text-anchor="middle" dominant-baseline="central">PI-HOLE</text>
-<text font-family="'Courier New',monospace" font-size="8" fill="#7a2020" x="125" y="560" text-anchor="middle" dominant-baseline="central">DNS · Unbound upstream · DNSSEC</text>
+<text font-family="'Courier New',monospace" font-size="8" fill="#7a2020" x="125" y="560" text-anchor="middle" dominant-baseline="central">DNS · Unbound · DoT · DNSSEC</text>
 
 <!-- WireGuard + Mullvad service card -->
 <rect x="30" y="578" width="190" height="36" rx="4" fill="#0a1020" stroke="#4488cc" stroke-width="0.5"/>
@@ -131,11 +131,11 @@
 
 <rect x="462" y="362" width="286" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="605" y="377" text-anchor="middle" dominant-baseline="central">GALAXY S23 ULTRA</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="393" text-anchor="middle" dominant-baseline="central">Android · WiFi</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="393" text-anchor="middle" dominant-baseline="central">Android · WireGuard full tunnel</text>
 
 <rect x="462" y="420" width="286" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="605" y="435" text-anchor="middle" dominant-baseline="central">GALAXY S10 FE</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="451" text-anchor="middle" dominant-baseline="central">Android · WiFi</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a3a2a" x="605" y="451" text-anchor="middle" dominant-baseline="central">Android · WireGuard full tunnel</text>
 
 <rect x="462" y="478" width="286" height="44" rx="4" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#336655" x="605" y="493" text-anchor="middle" dominant-baseline="central">ARCH LINUX USB</text>
@@ -152,63 +152,69 @@
 <text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="390" y="903" text-anchor="middle" dominant-baseline="central">LG NANOCELL 55"</text>
 <text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="390" y="919" text-anchor="middle" dominant-baseline="central">Smart TV · Cat6 to router</text>
 
+<!-- Guest Network -->
+<rect x="20" y="952" width="740" height="66" rx="4" fill="none" stroke="#1a3a2a" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="968" letter-spacing="2">GUEST NETWORK — AP ISOLATED</text>
+<rect x="220" y="962" width="340" height="44" rx="4" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#00cc66" x="390" y="977" text-anchor="middle" dominant-baseline="central">GUEST SSIDs</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a7a45" x="390" y="993" text-anchor="middle" dominant-baseline="central">AP isolation · confirmed: cannot reach LAN · admin locked to specific MACs</text>
+
 <!-- Planned / Aspirational -->
-<text font-family="'Courier New',monospace" font-size="9" fill="#8a7020" x="390" y="966" text-anchor="middle" letter-spacing="2">— PLANNED / ASPIRATIONAL —</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#8a7020" x="390" y="1030" text-anchor="middle" letter-spacing="2">— PLANNED / ASPIRATIONAL —</text>
 
-<rect x="20" y="974" width="740" height="140" rx="4" fill="none" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="8 5"/>
-<text font-family="'Courier New',monospace" font-size="9" fill="#8a7020" x="32" y="990" letter-spacing="2">ASPIRATIONAL</text>
+<rect x="20" y="1038" width="740" height="140" rx="4" fill="none" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="8 5"/>
+<text font-family="'Courier New',monospace" font-size="9" fill="#8a7020" x="32" y="1054" letter-spacing="2">ASPIRATIONAL</text>
 
+<rect x="204" y="1062" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="284" y="1077" text-anchor="middle" dominant-baseline="central">NAS STORAGE</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="284" y="1093" text-anchor="middle" dominant-baseline="central">Dedicated device</text>
 
-<rect x="204" y="998" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="284" y="1013" text-anchor="middle" dominant-baseline="central">NAS STORAGE</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="284" y="1029" text-anchor="middle" dominant-baseline="central">Dedicated device</text>
+<rect x="378" y="1062" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="458" y="1077" text-anchor="middle" dominant-baseline="central">IDS — SURICATA</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="458" y="1093" text-anchor="middle" dominant-baseline="central">Network monitor</text>
 
-<rect x="378" y="998" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="458" y="1013" text-anchor="middle" dominant-baseline="central">IDS — SURICATA</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="458" y="1029" text-anchor="middle" dominant-baseline="central">Network monitor</text>
+<rect x="552" y="1062" width="198" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="651" y="1077" text-anchor="middle" dominant-baseline="central">DEDICATED FW</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="651" y="1093" text-anchor="middle" dominant-baseline="central">pfSense/OPNsense</text>
 
-<rect x="552" y="998" width="198" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="651" y="1013" text-anchor="middle" dominant-baseline="central">DEDICATED FW</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="651" y="1029" text-anchor="middle" dominant-baseline="central">pfSense/OPNsense</text>
+<rect x="30" y="1120" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="110" y="1135" text-anchor="middle" dominant-baseline="central">WEB SERVER</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="110" y="1151" text-anchor="middle" dominant-baseline="central">Nginx / Caddy</text>
 
-<rect x="30" y="1056" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="110" y="1071" text-anchor="middle" dominant-baseline="central">WEB SERVER</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="110" y="1087" text-anchor="middle" dominant-baseline="central">Nginx / Caddy</text>
-
-<rect x="204" y="1056" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
-<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="284" y="1071" text-anchor="middle" dominant-baseline="central">MAIL SERVER</text>
-<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="284" y="1087" text-anchor="middle" dominant-baseline="central">Someday maybe</text>
+<rect x="204" y="1120" width="160" height="44" rx="4" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="5 3"/>
+<text font-family="'Courier New',monospace" font-size="11" font-weight="bold" fill="#aa8820" x="284" y="1135" text-anchor="middle" dominant-baseline="central">MAIL SERVER</text>
+<text font-family="'Courier New',monospace" font-size="9" fill="#6a5010" x="284" y="1151" text-anchor="middle" dominant-baseline="central">Someday maybe</text>
 
 <!-- Legend -->
-<rect x="20" y="1128" width="740" height="136" rx="4" fill="#0a0f0a" stroke="#1a3a2a" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="1144" letter-spacing="2">LEGEND</text>
+<rect x="20" y="1192" width="740" height="136" rx="4" fill="#0a0f0a" stroke="#1a3a2a" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="9" fill="#1a5c3a" x="32" y="1208" letter-spacing="2">LEGEND</text>
 
-<rect x="40" y="1154" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1166">Physical Linux machines</text>
+<rect x="40" y="1218" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00cc66" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1230">Physical Linux machines</text>
 
-<rect x="40" y="1176" width="20" height="14" rx="2" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1188">Virtual machines (QEMU/KVM or VirtualBox)</text>
+<rect x="40" y="1240" width="20" height="14" rx="2" fill="#151a0a" stroke="#88cc00" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1252">Virtual machines (QEMU/KVM or VirtualBox)</text>
 
-<rect x="40" y="1198" width="20" height="14" rx="2" fill="#0f1520" stroke="#cc6600" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1210">Malware analysis VM (REMnux)</text>
+<rect x="40" y="1262" width="20" height="14" rx="2" fill="#0f1520" stroke="#cc6600" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1274">Malware analysis VM (REMnux)</text>
 
-<rect x="40" y="1220" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1232">Windows machine</text>
+<rect x="40" y="1284" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="68" y="1296">Windows machine</text>
 
-<rect x="400" y="1154" width="20" height="14" rx="2" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1166">Mobile / portable</text>
+<rect x="400" y="1218" width="20" height="14" rx="2" fill="#0a0f0f" stroke="#336655" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1230">Mobile / portable</text>
 
-<rect x="400" y="1176" width="20" height="14" rx="2" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="4 2"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1188">Aspirational / planned</text>
+<rect x="400" y="1240" width="20" height="14" rx="2" fill="#0a0f0a" stroke="#8a7020" stroke-width="0.5" stroke-dasharray="4 2"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1252">Aspirational / planned</text>
 
-<rect x="400" y="1198" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1210">Network infrastructure</text>
+<rect x="400" y="1262" width="20" height="14" rx="2" fill="#0a1520" stroke="#00ccff" stroke-width="0.5"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1274">Network infrastructure</text>
 
-<rect x="400" y="1220" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1232">VPN layer</text>
+<rect x="400" y="1284" width="20" height="14" rx="2" fill="#0a1a10" stroke="#00ff88" stroke-width="1"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1296">VPN layer</text>
 
 <!-- Dashed group border legend -->
-<rect x="400" y="1242" width="20" height="14" rx="2" fill="none" stroke="#1a3a2a" stroke-width="0.8" stroke-dasharray="4 3"/>
-<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1254">VM host group (KVM / VirtualBox)</text>
+<rect x="400" y="1306" width="20" height="14" rx="2" fill="none" stroke="#1a3a2a" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text font-family="'Courier New',monospace" font-size="10" fill="#1a7a45" x="428" y="1318">VM host group (KVM / VirtualBox)</text>
 
 </svg>
