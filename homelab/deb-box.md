@@ -28,7 +28,7 @@ ThinkPad under QEMU/KVM.
 | RAM | 16GB |
 | Storage | 1TB HDD |
 | Network | Gigabit Ethernet |
-| Operation | Workstation (KDE Plasma) + SSH from ThinkPad + tablet |
+| Operation | Always-on server — SSH from full fleet |
 
 ---
 
@@ -80,18 +80,9 @@ Tested end-to-end: ThinkPad sends magic packet → camel powers on.
 
 ## Phase 3 — WireGuard and DDNS
 
-WireGuard server and DDNS configuration were restored from the ThinkPad
-backup — same config as documented in
-[wireguard-ddns-setup.md](wireguard-ddns-setup.md). eyeoftheneedle.dev
-via Cloudflare DDNS script.
-
-WireGuard peers on camel's server:
-
-| Peer | Role |
-|---|---|
-| Lenovo ThinkPad E16 Gen 2 | Primary workstation |
-| Samsung Galaxy S10 FE | Tablet |
-| Samsung Galaxy S23 Ultra | Primary phone — added April 28th, 2026 |
+WireGuard server configured on camel with DDNS via eyeoftheneedle.dev —
+see [wireguard-ddns-setup.md](wireguard-ddns-setup.md). Fleet expanded to
+9 machines — see [machine-fleet.md](machine-fleet.md) for the full peer list.
 
 Connectivity tested from three different WiFi networks on April 30th, 2026 —
 WireGuard re-established the tunnel automatically each time and SSH to camel
@@ -203,7 +194,7 @@ reachable through the WireGuard tunnel.
 |---|---|
 | Default drop on input | All inbound traffic denied unless explicitly allowed |
 | WireGuard port accepted | VPN clients can connect |
-| ICMP from monitoring IPs | External uptime checks allowed — scoped, not blanket |
+| ICMP | Accepted inbound |
 | WireGuard interface accepted | All decrypted tunnel traffic allowed inbound |
 | SSH blocked on LAN interface | Accessible only through WireGuard tunnel |
 | Forward chain | WireGuard client traffic forwarded — established/related accepted |
@@ -285,20 +276,49 @@ alerts on state transitions only (not every run). Checks:
 
 ---
 
+## Phase 13 — DNS-over-TLS
+
+Unbound reconfigured to forward DNS queries to Quad9 over an encrypted
+channel. Mullvad intercepts all standard DNS traffic within the tunnel —
+changing the upstream resolver address had no effect because queries were
+captured before reaching any upstream. DNS-over-TLS bypasses the
+interception entirely.
+
+This fixed SERVFAIL errors on ubuntu.com and Canonical domains that
+appeared after Mullvad was added as the exit node in Phase 11.
+
+| Layer | Role |
+|---|---|
+| Pi-hole | Filtering — forwards to Unbound |
+| Unbound | Forwards to Quad9 over encrypted DNS-over-TLS |
+| Quad9 | Encrypted upstream — not intercepted by Mullvad |
+
+---
+
+## Phase 14 — Fleet Local DNS
+
+Pi-hole dns.hosts populated with all fleet machine hostnames mapped to
+their WireGuard addresses. Every machine in the fleet resolves every
+other machine by hostname through Pi-hole — no /etc/hosts entries needed
+on individual machines.
+
+---
+
 ## Current State
 
 | Item | Status |
 |---|---|
-| OS | Debian (KDE Plasma) |
-| SSH | Passwordless ed25519 — ThinkPad, tablet, S23 Ultra. Password auth disabled. WireGuard-only access. |
+| OS | Debian 13 Trixie |
+| SSH | Passwordless ed25519 — full fleet. Password auth disabled. WireGuard-only access. |
 | Wake-on-LAN | Working — nmcli + BIOS, tested end-to-end |
 | WireGuard | Remote access tunnel — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
-| Full tunnel | All ThinkPad traffic routes through camel |
+| Full tunnel | All fleet traffic routes through camel → Mullvad |
 | Mullvad exit | WireGuard client traffic exits via Mullvad — no DNS leaks |
 | DDNS | camel.eyeoftheneedle.dev → home IP, cron every 5 min |
 | nftables | Default-drop — external access via WireGuard only |
 | Pi-hole | HTTPS at pihole.eyeoftheneedle.dev — large blocklist, network-wide via router DHCP, Unbound upstream |
-| Unbound | Running — recursive resolver on 127.0.0.1#5335, DNSSEC validated, queries routed through Mullvad |
+| Unbound | Running — recursive resolver on 127.0.0.1#5335, DNSSEC validated, DNS-over-TLS to Quad9, queries routed through Mullvad |
+| Fleet DNS | All fleet hostnames resolve by name through Pi-hole |
 | Backup | rsync target from ThinkPad via ~/backup.sh |
 | Tablet SSH | Termux on Samsung Galaxy S10 FE — confirmed working |
 | Monitoring | camel-monitor.sh (cron, email alerts), external uptime monitoring, HTTPS health endpoint |
@@ -312,8 +332,10 @@ alerts on state transitions only (not every run). Checks:
 - SSH key deployment and hardened auth (key-only, password auth disabled, root login disabled)
 - Wake-on-LAN across NIC, NetworkManager, and BIOS layers
 - Pi-hole DNS filtering with custom blocklists and Unbound recursive upstream
-- Unbound recursive DNS resolver with DNSSEC validation
+- Unbound recursive DNS resolver with DNSSEC validation and DNS-over-TLS upstream
+- DNS leak root-cause analysis — identified Mullvad DNS interception, fixed with DNS-over-TLS
 - Network-wide DNS via router DHCP
+- Fleet-wide local DNS via Pi-hole hostname entries
 - Let's Encrypt TLS certificate issuance via Cloudflare DNS challenge
 - nftables packet filtering — default-drop policy, scoped rules, NAT masquerade
 - Policy-based routing with packet marking and routing tables
@@ -327,4 +349,4 @@ alerts on state transitions only (not every run). Checks:
 
 ---
 
-*Last updated: May 3rd, 2026*
+*Last updated: May 5th, 2026*

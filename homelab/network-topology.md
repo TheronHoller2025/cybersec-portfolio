@@ -33,6 +33,11 @@ All primary workstations and laptops
 - Client isolation enabled
 - Internet access only — cannot reach main LAN
 
+### Guest Network
+- Dedicated guest SSIDs with AP isolation
+- Internet access only — confirmed: guests cannot reach LAN devices
+- Router admin panel locked to specific MACs
+
 ### Virtual Network (virbr0)
 - NAT bridge managed by libvirt on Lenovo ThinkPad
 - Confirmed active via libvirtd and dnsmasq
@@ -66,11 +71,14 @@ All primary workstations and laptops
 
 | Machine | VPN | Notes |
 |---|---|---|
-| Lenovo ThinkPad E16 | Full tunnel → camel → Mullvad | All traffic exits through Mullvad via camel |
-| HP ProBook/Kali | Mullvad | Manual WireGuard config via NetworkManager |
-| Galaxy S23 Ultra | WireGuard peer | Remote access to homelab |
-| Galaxy S10 FE | WireGuard peer | Remote access to homelab |
-| camel (OptiPlex 3040) | WireGuard server + Mullvad exit node | Peers: ThinkPad, tablet, S23 Ultra — client traffic exits through Mullvad |
+| camel (OptiPlex 3040) | WireGuard server + Mullvad exit node | 9-machine fleet mesh — all client traffic exits through Mullvad |
+| ThinkPad E16 Gen 2 | Full tunnel → camel → Mullvad | NM dispatcher, auto endpoint switching |
+| HP ProBook 450 G7 (Arch + Kali) | Full tunnel → camel → Mullvad | Both boot entries — separate fleet peers |
+| Dell Inspiron 3501 | Full tunnel → camel → Mullvad | NM dispatcher, auto endpoint switching |
+| Dell Inspiron 5680 (BigDell) | Full tunnel → camel → Mullvad | systemd, auto-start |
+| Lenovo ThinkBook 21KK | Full tunnel → camel → Mullvad | Windows service, AUTO_START |
+| Galaxy S23 Ultra | Full tunnel → camel → Mullvad | WireGuard app |
+| Galaxy S10 FE | Full tunnel → camel → Mullvad | WireGuard app |
 
 Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
@@ -81,9 +89,10 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 | Setting | Value |
 |---|---|
 | LAN DNS | Pi-hole on camel — served via router DHCP |
-| Pi-hole upstream | Unbound (local recursive resolver, DNSSEC enabled) |
+| Pi-hole upstream | Unbound → DNS-over-TLS to Quad9 (encrypted, bypasses Mullvad DNS interception) |
 | Pi-hole admin | HTTPS at pihole.eyeoftheneedle.dev — valid Let's Encrypt certificate |
 | DNS leak prevention | Unbound queries routed through Mullvad via UID routing |
+| Fleet local DNS | All fleet hostnames resolve by name through Pi-hole |
 | Blocklists | Custom blocklist |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, updated by script on camel |
 
@@ -100,4 +109,4 @@ Full setup documented in [wireguard-ddns-setup.md](wireguard-ddns-setup.md).
 
 ---
 
-*Last updated: May 3rd, 2026*
+*Last updated: May 5th, 2026*

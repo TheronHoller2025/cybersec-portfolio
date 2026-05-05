@@ -1,4 +1,4 @@
-# Theron's Cybersecurity Portfolio
+# Theron's Cybersecurity Homelab
 
 ## About Me
 
@@ -105,13 +105,14 @@ Deployed REMnux Noble (Ubuntu 24.04-based) as a dedicated malware analysis sandb
 Wiped Proxmox after persistent display and stability issues and rebuilt camel as a clean Debian box:
 - SSH key authentication (ed25519) deployed from ThinkPad and tablet (Termux)
 - Wake-on-LAN configured and confirmed working across NIC, NetworkManager, and BIOS
-- WireGuard and DDNS restored — same config, same eyeoftheneedle.dev endpoint
+- WireGuard server and DDNS configured — eyeoftheneedle.dev endpoint via Cloudflare
 - Pi-hole deployed as network-wide DNS filter — Unbound recursive upstream with DNSSEC, custom blocklist, router DHCP updated
 - Pi-hole HTTPS configured — valid Let's Encrypt certificate via Cloudflare DNS challenge
 - SSH hardened — key-only auth, password auth disabled, port 22 removed
 - nftables firewall — default-drop policy, SSH accessible only via WireGuard tunnel
 - Mullvad exit node — all WireGuard client traffic policy-routed through Mullvad; DNS leak prevention via Unbound UID routing
 - Automated monitoring — camel-monitor.sh checks all critical services every five minutes, email alerts on state change
+- DNS-over-TLS on Unbound — Quad9 encrypted upstream bypasses Mullvad DNS interception
 
 **Full documentation:** [deb-box.md](homelab/deb-box.md)
 
@@ -123,9 +124,22 @@ Diagnosed carrier-level blocking of UDP 51820 and migrated camel's WireGuard ser
 - WireGuard migrated from UDP 51820 → UDP 443 on camel; port forward updated on BE700
 - `eyeoftheneedle.dev` registered on Cloudflare (2 years, WHOIS privacy); `camel.eyeoftheneedle.dev` A record, DNS only
 - `/usr/local/bin/ddns-update.sh` on camel — Cloudflare API, scoped token, cron every 5 min
-- `wg-home` / `wg-away` aliases for endpoint switching; `ssh camel` routes via WireGuard IP
+- Automatic endpoint switching via NetworkManager dispatcher — home LAN vs. remote, no manual commands
 
 **Full documentation:** [wireguard-ddns-setup.md](homelab/wireguard-ddns-setup.md)
+
+---
+
+### WireGuard Fleet Mesh + SSH Infrastructure
+Expanded VPN and SSH infrastructure across the full 9-machine fleet:
+- WireGuard full-tunnel mesh deployed to all machines — archlaptop, BigDell, Inspiron, ThinkBook, Kali — all fleet traffic exits via Mullvad through camel
+- NetworkManager dispatcher scripts handle automatic home/remote endpoint switching on Linux machines
+- SSH mesh configured across full fleet — passwordless ed25519, all directions, all machines
+- Pi-hole local DNS — all fleet hostnames resolve by name across the mesh
+- Fleet firmware audited via fwupd/LVFS — Dell Inspiron 3501 BIOS updated (critical security update)
+- Guest network isolation verified — LAN devices confirmed unreachable from guest SSIDs; router admin locked to specific MACs
+
+**Full documentation:** [machine-fleet.md](homelab/machine-fleet.md) | [deb-box.md](homelab/deb-box.md)
 
 ---
 
@@ -166,7 +180,7 @@ First analysis exercise using the REMnux sandbox. Obtained a WannaCry sample fro
 ---
 
 ### Network Topology Documentation
-Built complete SVG network topology diagram documenting full home lab machine fleet — 6 machines across multiple Linux distributions with network relationships mapped.
+Built complete SVG network topology diagram documenting full home lab machine fleet — 9 machines across multiple operating systems with network relationships mapped.
 
 ---
 
@@ -184,7 +198,7 @@ Custom bash script at `/usr/local/bin/arch-maintenance` covering full monthly sy
 | Lenovo ThinkPad E16 Gen 2 | EndeavourOS + KDE Plasma 6 | Primary workstation, QEMU/KVM host |
 | HP ProBook 450 G7 | Arch Linux / Kali dual-boot | Secondary lab machine |
 | Dell Inspiron 5680 | CachyOS | Desktop workstation, 4-monitor setup |
-| Dell OptiPlex 3040 | Debian | Server — WireGuard, Pi-hole/Unbound, Mullvad exit, nftables |
+| Dell OptiPlex 3040 | Debian | Server — WireGuard fleet mesh, Pi-hole/Unbound/DoT, Mullvad exit, nftables |
 | Dell Inspiron 3501 | Linux Mint 22.3 | General use, QEMU/KVM host |
 | Lenovo ThinkBook | Windows 11 Pro | Windows environment / VirtualBox |
 

@@ -20,7 +20,7 @@ specific purpose and runs a deliberately chosen OS.
 | CPU | AMD Ryzen 7 7735HS |
 | RAM | 64GB |
 | Purpose | Primary workstation, QEMU/KVM virtualization host |
-| VPN | Mullvad (app) |
+| VPN | WireGuard full tunnel → camel → Mullvad |
 
 **Virtual Machines (QEMU/KVM):**
 | VM | Purpose |
@@ -37,7 +37,7 @@ specific purpose and runs a deliberately chosen OS.
 | CPU | Intel i7-10510U |
 | RAM | 32GB |
 | Purpose | Secondary lab machine, attack platform |
-| VPN | Manual WireGuard config when needed / Mullvad on Kali |
+| VPN | WireGuard full tunnel → camel → Mullvad (both boot entries) |
 | VMs | None |
 
 ---
@@ -49,6 +49,7 @@ specific purpose and runs a deliberately chosen OS.
 | CPU | Intel i5-1035G1 |
 | RAM | 8GB |
 | Purpose | General use |
+| VPN | WireGuard full tunnel → camel → Mullvad |
 | VMs | Devuan (QEMU/KVM) |
 
 ---
@@ -60,6 +61,7 @@ specific purpose and runs a deliberately chosen OS.
 | CPU | AMD Ryzen 5 7430U |
 | RAM | 32GB |
 | Purpose | Windows administration practice |
+| VPN | WireGuard full tunnel → camel → Mullvad (Windows service, AUTO_START) |
 | Tools | VirtualBox, Sysinternals Suite, PowerShell |
 | VMs | Kali |
 
@@ -76,6 +78,7 @@ specific purpose and runs a deliberately chosen OS.
 | RAM | 16GB |
 | Display | 4-monitor setup (55" LG 4K, 32" Samsung portrait, 2x HP 24" 1080p) |
 | Purpose | Desktop workstation |
+| VPN | WireGuard full tunnel → camel → Mullvad |
 | VMs | None |
 
 ---
@@ -85,11 +88,11 @@ specific purpose and runs a deliberately chosen OS.
 ### Dell OptiPlex 3040 — camel
 | Field | Details |
 |---|---|
-| OS | Debian 13 Trixie (KDE Plasma) |
+| OS | Debian 13 Trixie |
 | CPU | Intel i7-6700 |
 | RAM | 16GB |
-| Purpose | Always-on server — WireGuard, Pi-hole/Unbound DNS, Mullvad exit node, nftables firewall, monitoring, backup target, hardening target |
-| Access | SSH via WireGuard tunnel — ThinkPad, tablet, S23 Ultra |
+| Purpose | Always-on server — WireGuard, Pi-hole/Unbound/DoT DNS, Mullvad exit node, nftables firewall, monitoring, backup target, hardening target |
+| Access | SSH on a non-standard port via WireGuard tunnel only — full fleet |
 
 ---
 
@@ -97,8 +100,8 @@ specific purpose and runs a deliberately chosen OS.
 
 | Device | OS | Purpose |
 |---|---|---|
-| Samsung Galaxy S23 Ultra | Android | Primary phone |
-| Samsung Galaxy S10 FE | Android | Tablet |
+| Samsung Galaxy S23 Ultra | Android | Primary phone — WireGuard full tunnel |
+| Samsung Galaxy S10 FE | Android | Tablet — WireGuard full tunnel |
 
 ---
 
@@ -116,9 +119,10 @@ specific purpose and runs a deliberately chosen OS.
 | Device | Details |
 |---|---|
 | Router | TP-Link Archer BE700 (WiFi 7) |
-| DNS | Pi-hole (camel) → Unbound upstream — network-wide ad/malware blocking, DNSSEC |
-| VPN Server (camel) | WireGuard — remote access tunnel + Mullvad exit node for all connected clients |
+| DNS | Pi-hole → Unbound → DNS-over-TLS (Quad9, encrypted) — network-wide filtering, DNSSEC, no DNS leaks |
+| VPN Mesh | WireGuard full-tunnel mesh — 9 machines, all traffic exits via Mullvad |
 | DDNS | eyeoftheneedle.dev (Cloudflare) — camel.eyeoftheneedle.dev → home IP, script-driven on camel — see [wireguard-ddns-setup.md](wireguard-ddns-setup.md) |
+| Guest Network | Dedicated guest SSIDs with AP isolation — confirmed: guests cannot reach LAN devices |
 | IoT Network | Dedicated VLAN with client isolation |
 
 ---
@@ -155,7 +159,15 @@ specific purpose and runs a deliberately chosen OS.
 - Mullvad exit node on camel — WireGuard client traffic policy-routed through Mullvad tunnel; DNS leak prevention via Unbound UID routing
 - Automated monitoring — camel-monitor.sh checks all critical services every five minutes, email alerts on state change; external uptime monitoring integrated
 - unattended-upgrades configured on camel — security patches applied automatically
+- WireGuard fleet mesh expanded to all 9 machines — archlaptop, BigDell, Inspiron, ThinkBook, Kali all on full tunnel through camel → Mullvad (May 2026)
+- SSH mesh deployed across full fleet — passwordless ed25519, all directions, all machines (May 2026)
+- Kali Linux added as bare-metal boot entry on HP ProBook 450 G7 — WireGuard peer, boot-persistent (May 2026)
+- ThinkBook WireGuard configured on Windows 11 — OpenSSH Server deployed, Windows tunnel service AUTO_START (May 2026)
+- DNS-over-TLS deployed on camel — Unbound forwards to Quad9 over encrypted channel to bypass Mullvad DNS interception (May 2026)
+- Fleet firmware audited via fwupd/LVFS — Dell Inspiron 3501 BIOS updated, critical security update (May 2026)
+- Guest network isolation verified — Kali tested on guest SSID, LAN devices unreachable; router admin locked to specific MACs (May 2026)
+- Pi-hole local DNS — all fleet hostnames resolve by name through Pi-hole across the mesh (May 2026)
 
 ---
 
-*Last updated: May 3rd, 2026*
+*Last updated: May 5th, 2026*
