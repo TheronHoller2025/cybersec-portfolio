@@ -39,19 +39,21 @@
 - Focus: Hardware, networking fundamentals,
   operating systems, security basics
 
+### CompTIA A+ Cyber (Local Community College)
+- Class started: May 5th, 2026
+- Schedule: Tuesday/Thursday, 5–8 PM
+- Focus: Hardware, troubleshooting, operating systems
+
 ---
 
 ## Planned 📋
-
-### CompTIA A+
-- Next after Tech+
-- Focus: Hardware, troubleshooting, operating systems
 
 ### CompTIA Network+
 - Focus: Networking concepts, infrastructure, security
 
 ### CompTIA Security+
 - Target for SOC Tier 1 analyst roles
+- Note: A+ Core 1 & Core 2 and Network+ are not required prerequisites
 
 ---
 
@@ -76,4 +78,4 @@
 
 ---
 
-*Last updated: April 28th, 2026*
+*Last updated: May 5th, 2026*
