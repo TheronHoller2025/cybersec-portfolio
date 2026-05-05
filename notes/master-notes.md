@@ -222,10 +222,11 @@ Tech+ → A+ → Network+ → Security+ → eJPT → PNPT → OSCP
 ### Status
 - Google IT Support Professional Certificate ✅
 - Tech+ — in progress
-- A+ — upcoming
+- A+ — CompTIA A+ Cyber (in progress, started May 5th, 2026 — Tue/Thu 5–8 PM, local community college)
 - Network+ — upcoming  
 - Security+ — target for SOC Tier 1 and analyst roles
 - eJPT → PNPT → OSCP — long term
+- Note: A+ Core 1 & Core 2 and Network+ are NOT required prerequisites for Security+.
 
 ### Key Point
 Security+ opens doors for SOC Tier 1 Analyst roles and remote work opportunities.
@@ -333,4 +334,4 @@ Start here before HackTheBox:
 
 ---
 
-*Last updated: April 28th, 2026 — ongoing*
+*Last updated: May 5th, 2026 — ongoing*
